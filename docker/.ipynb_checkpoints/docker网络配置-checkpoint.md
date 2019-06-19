@@ -3,13 +3,14 @@
 docker通信的关键点在于，容器与容器之间的通信，容器与中心的通信，nat映射
 需要源容器，作为中心节点。
 
-![image.png](/files/docker/pictures/ubzsqpuxqu.png)
+![image.png](/files/docker/pictures/e9frvrecj2q.png)				
 
 	• 第一步创建中心节点 
 		○ docker -tid --name h1 mytest:v1
 	• 第二步创建其他节点容器
 		○ docker -tid --name h2 --link h1 
 完成这两步后，h1与h2就能够相互通信了
+
 
 ```{.python .input}
 
