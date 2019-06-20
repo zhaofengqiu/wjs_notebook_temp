@@ -54,7 +54,3 @@ Pipework是一个简单易用的Docker容器网络配置工具。由200多行she
 #/opt/bin/etcdctl get /coreos.com/network/subnets/172.16.49.0-24
 ```
 
-
-```{.python .input}
-
-```
