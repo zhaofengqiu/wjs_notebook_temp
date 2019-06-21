@@ -107,3 +107,17 @@ TLS协议分类：
 4. 通过TLS记录协议来传输数据。
 #### TLS协议工作流程
 ![image.png](pictures/3bre73rhran.png)
+这个过程也就是将上层数据经过TLS后，直接加上TLS头部变成TCP的数据。
+#### TLS工作实例
+![image.png](pictures/xi7g5g33poq.png)
+#### 基于TLS的https协议
+封装过程：HTTP --> TLS-->TCP-->IP
+其中TLS加密数据的过程
+![image.png](pictures/7hahhvfqw8k.png)
+![image.png](pictures/mqg034mrle8.png)
+## SET协议实现电子交易
+
+
+```{.python .input}
+
+```
