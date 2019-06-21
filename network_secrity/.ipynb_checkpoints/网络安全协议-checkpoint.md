@@ -88,11 +88,14 @@ IKE例子举例
 建立传输通道
 1. 协商IKE的安全策略集（如加密方式、DH算法等）
 2. 使用前面协商出来的DH算法来交换密钥，交换之后双方就有了一个会话密钥
-3. 通过会话密钥来加密鉴定数据），协商各种IKE参数
+3. 通过会话密钥来加密鉴定数据（PSK、RSA数字签名认证）
 ![image.png](pictures/ul68k3s4ph.png)  
 
 协商IPsec策略（这是采用AH协议、或者是ESP协议、或者是AH+ESP协议）
-![image.png](pictures/8e384bdkvcw.png)
+第一阶段匹配的就是IKE策略，而匹配了IKE策略后就是到了第二阶段的匹配IPsec策略
+![image.png](pictures/8e384bdkvcw.png)  
+
+所以我们可以通过上面的两个阶段得出sa的建立所依赖的参数就是IKE策略和IPsec策略。
 ## TLS协议
 TLS是传输层安全协议
 
