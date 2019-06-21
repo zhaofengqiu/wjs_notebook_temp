@@ -116,7 +116,16 @@ TLS协议分类：
 ![image.png](pictures/7hahhvfqw8k.png)
 ![image.png](pictures/mqg034mrle8.png)
 ## SET协议实现电子交易
-
+### 封装发送信息
+#### 持卡人封装发送信息
+![image.png](pictures/s0mvm0nemt.png)
+![image.png](pictures/vhuc1mnxorn.png)
+其中SKC是发送者的私钥，H是报文摘要算法。PKA是商家的公钥
+#### 商家封装发送信息
+![image.png](pictures/rgoinn328zn.png)
+### 商家认证发送者身份和解密数据过程
+![image.png](pictures/8xidr2osmpk.png)
+其中SKA指的是商家的私钥，PKC指的是持卡人的公钥。在这里我们需要使用公钥来解密数字签名，从而获取到信息
 
 ```{.python .input}
 
