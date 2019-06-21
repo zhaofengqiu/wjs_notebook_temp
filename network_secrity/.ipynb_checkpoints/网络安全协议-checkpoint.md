@@ -19,9 +19,6 @@
 
 ### 安全协议体系结构
 ![image.png](pictures/xt4wedmgabq.png)
-## 安全协议体系结构详细介绍
-### IPsec协议
->IPSec是网际层实现IP分组端到端安全传输的机制,是以RFC形式公布的一组安全协议集,是在IP包级为IP业务提供保护的安全协议.
 
 
 ```{.python .input}
