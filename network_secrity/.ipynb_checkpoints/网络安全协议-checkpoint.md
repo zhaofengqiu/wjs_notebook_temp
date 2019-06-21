@@ -115,17 +115,45 @@ TLS协议分类：
 其中TLS加密数据的过程
 ![image.png](pictures/7hahhvfqw8k.png)
 ![image.png](pictures/mqg034mrle8.png)
-## SET协议实现电子交易
-### 封装发送信息
-#### 持卡人封装发送信息
+### SET协议实现电子交易  
+双重签名
+![image.png](pictures/xwy8z2u2fpq.png)
+双重签名的作用  
+对于持卡人来说：持卡人完成一次电子交易需要向商家列出购买的商品清单和支付凭证,而商家只能验证该支付凭证不能读取  
+对于商家而言：双重签名的目的是将每一次电子交易涉及的支付信息和订货信息绑定,并证明这两组信息确实由持卡人给出。  
+
+商家获得支付PIMD,再加上订货信息算出双重数字签名来验证  
+
+支付网关获得OMD,再加上支付信息算出双重数字签名来验证的
+
+---
+#### 封装发送信息
+##### 持卡人封装发送信息
 ![image.png](pictures/s0mvm0nemt.png)
 ![image.png](pictures/vhuc1mnxorn.png)
-其中SKC是发送者的私钥，H是报文摘要算法。PKA是商家的公钥
-#### 商家封装发送信息
+其中SKC是发送者的私钥，H是报文摘要算法。PKA是商家的公钥.双方会话密钥通过PKA加密后生成数字封面
+##### 商家封装发送信息
 ![image.png](pictures/rgoinn328zn.png)
-### 商家认证发送者身份和解密数据过程
+#### 商家认证发送者身份和解密数据过程
 ![image.png](pictures/8xidr2osmpk.png)
-其中SKA指的是商家的私钥，PKC指的是持卡人的公钥。在这里我们需要使用公钥来解密数字签名，从而获取到信息
+其中SKA指的是商家的私钥，PKC指的是持卡人的公钥。在这里我们需要使用公钥来解密数字签名，从而获取到信息.
+#### 购买请求消息封装过程
+![image.png](pictures/kxdapvdhpcr.png)
+PKA是商家的公钥，PKG指的是支付网关的公钥。最终生成的购买请求消息由持卡人发给商家，而购买请求中关于支付网关的部分将由商家转发给支付网关  
+
+#### 商家鉴别购买请求消息
+![image.png](pictures/gsjal1muk0l.png)  
+
+#### 商家封装授权请求消息
+![image.png](pictures/atswv2yanit.png)
+PKG指的是支付网关的公钥,SKA指的是商家的私钥
+
+#### 支付网关验证授权请求消息
+![image.png](pictures/c84pu2bxc46.png)
+
+#### 商家请求支付请求消息
+![image.png](pictures/2gp2py46yzh.png)
+
 
 ```{.python .input}
 
