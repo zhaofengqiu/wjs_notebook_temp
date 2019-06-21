@@ -1,2 +1,6 @@
-# docker安装![image.png](pictures/qjcghe0qj5k.png)
+# docker安装
 centos安装： yum -y install docker
+
+```{.python .input}
+
+```
