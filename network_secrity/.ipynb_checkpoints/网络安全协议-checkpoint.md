@@ -21,7 +21,7 @@
 ![image.png](pictures/wtdpsq00fxa.png)
 
 ## 安全协议体系结构详细介绍
-IPsec总的来说就是通过IPsec的各个协议来启动IKE。所以IPsec本质上的体现就是IKE协议
+
 ### IPsec协议
 >IPSec是网际层实现IP分组端到端安全传输的机制,是以RFC形式公布的一组安全协议集,是在IP包级为IP业务提供保护的安全协议.IPSec将几种安全技术结合形成一个比较完整的安全体系结构.
 
@@ -66,12 +66,17 @@ RSA数字签名认证
 传输/隧道模式下封装的安全载荷
 ![image.png](pictures/gtqp1trq28n.png)
 ###  IPsec的IKE协议
+IPsec在传送认证或加密的数据之前,必须就协议、加密算法和使用的密钥进行协商。而这个协商过程就是IKE协议
 IKE实际上是三个协议ISAKMP、OAKLEY和、SKEME的混合体。使用的协议都是IPsec组成中的协议
 * ISAKMP提供了认证和密钥交换的框架  
 * OAKLEY描述了密钥交换的模式  
 * SKEME定义了密钥交换技术  
 
-IKE的作用发之一就是建立安全关联。IKE建立sa的过程一共包括两个阶段  
+IKE在作用就是在通信系统之间建立安全关联(SA),提供密钥确定、密钥管理的机制;IKE将密钥协商的结果保留在SA。
+#### IKE的启动过程
+![image.png](pictures/eodmiqexwvb.png)  
+由于SA( Security Association)是由一系列参数(如加密算法、密钥和  生命周期)定义的安全信道。所以建立SA的过程也就是参数的协商过程。而这些参数则是分为两部分，第一部分是两个终端已经存在的参数，比如加密方式，散列算法，密钥分发协议。而第二部分则是通过第一部分的参数产生的第二阶段
+IKE建立sa的过程一共包括两个阶段  
 SAKMP的第一个阶段( Main mode,MM)建立安全的传输通道  
 * 协商和建立 ISAKMP SA,两个系统根据DH算法生成对称密钥,后续的KE通信都使用该密钥加密  
 * 验证远程系统的标识(初始认证)  
@@ -80,9 +85,13 @@ SAKMP第二个阶段( Quick Mode,QM)建立安全关联:
 
 IKE例子举例  
 ![image.png](pictures/osepjzk8ba8.png)  
-建立传输通道（（1）协商共同的加密算法，散列算法等（2）通过上面协商出来的结果来进行交换密钥（3）通过交换得到的密钥进行验证完整性），协商各种IKE参数
-![image.png](pictures/ul68k3s4ph.png)
-协商sa，建立DH密钥
+建立传输通道
+1. 协商IKE的安全策略集（如加密方式、DH算法等）
+2. 使用前面协商出来的DH算法来交换密钥，交换之后双方就有了一个会话密钥
+3. 通过会话密钥来加密鉴定数据），协商各种IKE参数
+![image.png](pictures/ul68k3s4ph.png)  
+
+协商IPsec策略（这是采用AH协议、或者是ESP协议、或者是AH+ESP协议）
 ![image.png](pictures/8e384bdkvcw.png)
 ## TLS协议
 TLS是传输层安全协议
