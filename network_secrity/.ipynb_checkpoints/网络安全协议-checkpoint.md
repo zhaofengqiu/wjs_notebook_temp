@@ -18,9 +18,10 @@
 4. 防重放攻击机制  
 
 ### 安全协议体系结构
-![image.png](pictures/xt4wedmgabq.png) 
+![image.png](pictures/wtdpsq00fxa.png)
 
 ## 安全协议体系结构详细介绍
+IPsec总的来说就是通过IPsec的各个协议来启动IKE。所以IPsec本质上的体现就是IKE协议
 ### IPsec协议
 >IPSec是网际层实现IP分组端到端安全传输的机制,是以RFC形式公布的一组安全协议集,是在IP包级为IP业务提供保护的安全协议.IPSec将几种安全技术结合形成一个比较完整的安全体系结构.
 
@@ -49,16 +50,42 @@ IPSec提供了下面的安全服务:
 不改变原IP分组的IP头部，他是将要保护的数据作为上层协议数据这种模式下, IPSec所保护的数据就是作为IP分组净荷的上层协议数据,如TCP、UDP报文和其他基于IP的上层协议报文。
 ### 隧道模式
 将整个IP分组作为另外一个载荷的IP分组上层协议，进行保护
-## IPsec组成
+### IPsec组成
 ![image.png](pictures/vp3ag65fiq.png)
 Psk指的是预共享密钥
 ![image.png](pictures/9aazlablpib.png)
 RSA数字签名认证
 ![image.png](pictures/s66jlrimjlg.png)
-### IPsec的AH和ESP
+#### IPsec的AH和ESP
 认证头:所有数据都是明文的，提供认证（数字签名）和完整性（散列算法）的功能
-![image.png](pictures/j970lyztdx9.png)
+![image.png](pictures/j970lyztdx9.png)  
+传输/隧道协议的认证头
+![image.png](pictures/g901s2t3799.png)
 封装安全载荷：载荷数据是加密的，提供：加密、认证和完整性的功能。
+![image.png](pictures/v3xp0syfkg.png)
+传输/隧道模式下封装的安全载荷
+![image.png](pictures/gtqp1trq28n.png)
+###  IPsec的IKE协议
+IKE实际上是三个协议ISAKMP、OAKLEY和、SKEME的混合体。使用的协议都是IPsec组成中的协议
+* ISAKMP提供了认证和密钥交换的框架  
+* OAKLEY描述了密钥交换的模式  
+* SKEME定义了密钥交换技术  
+
+IKE的作用发之一就是建立安全关联。IKE建立sa的过程一共包括两个阶段  
+SAKMP的第一个阶段( Main mode,MM)建立安全的传输通道  
+* 协商和建立 ISAKMP SA,两个系统根据DH算法生成对称密钥,后续的KE通信都使用该密钥加密  
+* 验证远程系统的标识(初始认证)  
+SAKMP第二个阶段( Quick Mode,QM)建立安全关联:  
+* 使用 IISAKMP/MM SA提供的安全信道协商一个或多个用于IPsec通信的SA  
+
+IKE例子举例  
+![image.png](pictures/osepjzk8ba8.png)  
+建立传输通道（（1）协商共同的加密算法，散列算法等（2）通过上面协商出来的结果来进行交换密钥（3）通过交换得到的密钥进行验证完整性），协商各种IKE参数
+![image.png](pictures/ul68k3s4ph.png)
+协商sa，建立DH密钥
+![image.png](pictures/8e384bdkvcw.png)
+## TLS协议
+TLS是传输层安全协议
 
 ```{.python .input}
 
