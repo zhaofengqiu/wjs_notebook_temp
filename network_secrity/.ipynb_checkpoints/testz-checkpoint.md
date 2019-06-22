@@ -1,2 +1,12 @@
-![jupyter](http://jupyter.org/assets/main-logo.svg)
-<img src="http://jupyter.org/assets/main-logo.svg", width=320, heigth=240>
+<img src="http://www.58jixie.com/data/product/201206/79497_20120606092927.jpg" width="40ox" height="40px" />
+
+```{.python .input}
+
+```
+
+```{.python .input}
+
+```
+
+<img src="http://www.58jixie.com/data/product/201206/79497_20120606092927.jpg" width="40px" height="40px" />
+
