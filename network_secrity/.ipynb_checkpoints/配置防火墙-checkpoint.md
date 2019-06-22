@@ -34,20 +34,29 @@ ASA# show access-list list-num
 ASA# show access-lists
 # 定义NAT
 指定公网地址范围：定义地址池 nat_id
+
 ```
 
-ASA(config)# global  (outside)  nat_id   { interface |  ip_add1-ip_add2}
+ASA(config)# global  (outside)  nat_id   { interface |  ip_add1-ip_add2} 
 ```
+
 
 动态地址分配
+
 ```
 ASA(config)#nat (inside)  nat_id   net_addr  global_mask 
 ```
+
+
 静态地址分配
+
 ```
 ASA(config)# static (internal_if_name, external_if_name) protocol {interface|out_ip} [out_port] inside_ip [in_port ]  [netmark global_mask]
 
 ```
+如：
+static (inside,outside) 1.1.1.1 192.168.0.100 netmask 255.255.255.255 ////将外网IP地址1.1.1.1 做静态映射到 内网IP地址 192.168.0.100
+
 NAT例子：
 
 ```
@@ -58,8 +67,8 @@ ASA(config-if)# ip address 192.168.1.1 255.255.255.0
 ASA(config-if)# no shutdown
 ASA(config-if)# exit
 ASA(config)# nat (inside) 1 192.168.1.0 255.255.255.0
-或  ASA(config)# nat (inside) 1 0.0.0.0 0.0.0.0   //任何IP都可以NAT，可以自由设置范围
-ASA(config)# global (outside) 1 interface 
+或  ASA(config)# nat (inside) 1 0.0.0.0 0.0.0.0   //建立一个内网需要映射的地址组，这里用的是0.0.0.0/0全网都可以映射，实际可以按照需要指定哪些地址为这个需要做NAT的地址组
+ASA(config)# global (outside) 1 interface  //global表示全局默认NAT地址池，2为编号
 ```
 
 
