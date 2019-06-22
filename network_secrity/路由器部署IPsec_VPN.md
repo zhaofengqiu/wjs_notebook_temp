@@ -12,6 +12,12 @@ Router(config)# crypto isakmp key 0 keystring address peer-address   //为“pre
 ```
 IKE策略中需要配置的策略有消息加密算法、消息完整性算法、对端认证算法、DH交换秘钥算法、SA生存时间
 # 配置IPsec策略
+```
+R1(config)# crypto isakmp key cisco123 address 172.30.2.2
+R1(config)# crypto ipsec transform-set MYSET esp-aes 128
+R1(cfg-crypto-trans)# exit
+```  
+# 应用加密映射 (crypto map)
 
 
 ```{.python .input}
