@@ -10,7 +10,9 @@ Router(config--isakmp)#lifetime lifetime
 Router(config)# crypto isakmp key 0 keystring address peer-address   //为“pre-share” 认证方式配置密钥 
 
 ```
-IKE策略中需要配置的策略有消息加密算法、消息完整性算法、对端认证算法
+IKE策略中需要配置的策略有消息加密算法、消息完整性算法、对端认证算法、DH交换秘钥算法、SA生存时间
+# 配置IPsec策略
+
 
 ```{.python .input}
 
