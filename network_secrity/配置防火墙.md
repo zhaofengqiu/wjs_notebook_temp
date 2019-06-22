@@ -1,5 +1,6 @@
 # 配置防火墙接口
 配置vlan接口
+
 ```
 配置vlan
 ASA(config)# interface  vlan  vlan_number
@@ -10,6 +11,8 @@ ASA(config-if)# ip address ip_addr mask_num
 ASA(config)# interface Ethernet0/0  
 ASA(config)# switchport access vlan vlan_number
 ```
+
+
 配置vlan接口并且将vlan分配给实际物理接口。在这个过程中需要注意的是物理接口需要no shutdown。
 ## 验证vlan配置
 ASA(config)# show switch vlan
@@ -30,6 +33,7 @@ ASA(config)# access-group list-num in /out interface if-name
 ASA# show access-list list-num 
 ASA# show access-lists
 # 定义NAT
+
 ```
 ASA(config)# interface Ethernet0/1
 ASA(config-if)# nameif inside
@@ -42,6 +46,3 @@ ASA(config)# nat (inside) 1 192.168.1.0 255.255.255.0
 ASA(config)# global (outside) 1 interface 
 ```
 
-```{.python .input}
-
-```
