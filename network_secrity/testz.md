@@ -4,7 +4,3 @@
 
 
 ![sass' width='40px' height='40px](http://www.58jixie.com/data/product/201206/79497_20120606092927.jpg)
-
-```{.python .input}
-
-```
