@@ -33,6 +33,22 @@ ASA(config)# access-group list-num in /out interface if-name
 ASA# show access-list list-num 
 ASA# show access-lists
 # 定义NAT
+指定公网地址范围：定义地址池 nat_id
+```
+
+ASA(config)# global  (outside)  nat_id   { interface |  ip_add1-ip_add2}
+```
+
+动态地址分配
+```
+ASA(config)#nat (inside)  nat_id   net_addr  global_mask 
+```
+静态地址分配
+```
+ASA(config)# static (internal_if_name, external_if_name) protocol {interface|out_ip} [out_port] inside_ip [in_port ]  [netmark global_mask]
+
+```
+NAT例子：
 
 ```
 ASA(config)# interface Ethernet0/1
@@ -46,3 +62,7 @@ ASA(config)# nat (inside) 1 192.168.1.0 255.255.255.0
 ASA(config)# global (outside) 1 interface 
 ```
 
+
+```{.python .input}
+
+```
