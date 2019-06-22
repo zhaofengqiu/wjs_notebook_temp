@@ -1,2 +1,34 @@
 # 密码学分类
-## 
+## 密码通讯系统
+![image.png](pictures/84fmbl4la1o.png)
+<div style="width:300px; margin: 0 auto;">
+    
+![image.png](http://pic37.nipic.com/20140113/8800276_184927469000_2.png)
+
+</div>
+
+## 概念阐述
+![image.png](pictures/m1idxyjgx2m.png)
+## 密码系统分类
+![image.png](pictures/i8kr4ike2l.png)
+![image.png](pictures/tbyd643g7hd.png)
+## 数据加密实现
+![image.png](pictures/q0x5mj7s999.png)
+## 密码分析分类
+![image.png](pictures/xlpyp2x7jf.png)
+### 古典密码技术
+#### 替换密码技术
+以符号的置换来实现掩盖明文信息  
+1. 单字符单表密码，如凯撒密码。
+    凯撒密码阐述，把明文中的所有字母都用它右边的第k个字母代替，F（x） = (a+k) mod n(a表示明文字母，n表示集中字母个数，k表示密钥)  
+2. 单字符多表替换密码，如维吉尼亚密码，使用一个词组作为密钥。
+![image.png](pictures/rgq7w9ccxfg.png)
+			
+#### 换位密码技术，
+ 对字符进行重新组合，并不会改变消息中的字符
+    列换位密码：
+   ![image.png](pictures/cz2l3xx6tl.png)
+
+```{.python .input}
+
+```
