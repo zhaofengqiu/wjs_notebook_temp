@@ -38,7 +38,9 @@ Docker容器之间直接使用自己的IP地址进行通信。直接路由方式
 		
 ### 直接路由方式
 通过在Docker主机上添加静态路由实现跨宿主机通信
-![image.png](pictures/ahbxvcv58jq.png)	
+
+<img src="pictures/9wzl55dmvlu.png" width="400" />
+
 ### Pipework 
 Pipework是一个简单易用的Docker容器网络配置工具。由200多行shell脚本实现。通过使用ip、brctl、ovs-vsctl等命令来为Docker容器配置自定义的网桥、网卡、路由等。
     □ 使用新建的bri0网桥代替缺省的docker0网桥
@@ -54,7 +56,9 @@ Pipework是一个简单易用的Docker容器网络配置工具。由200多行she
     § 将原始数据包封装在VXLAN或UDP数据包中，IP层以outip为目的IP进行封装；
     § 由于目的IP是宿主机IP，因此路由是可达的；
     § VXLAN或UDP数据包到达目的宿主机解封装，解出原始数据包，最终到达目的容器。
-![image.png](pictures/5tfvn1skf37.png)
+
+<img src="pictures/0g40xicuakfk.png" width="500" />
+
 
 ```
 #/opt/bin/etcdctl get /coreos.com/network/config
