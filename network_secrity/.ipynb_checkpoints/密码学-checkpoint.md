@@ -1,11 +1,6 @@
 # 密码学分类
 ## 密码通讯系统
-![image.png](pictures/84fmbl4la1o.png)
-<div style="width:300px; margin: 0 auto;">
-    
-![image.png](http://pic37.nipic.com/20140113/8800276_184927469000_2.png)
-
-</div>
+<img src="pictures/y9obz9y5byr.png" width="600px" />
 
 ## 概念阐述
 ![image.png](pictures/m1idxyjgx2m.png)
