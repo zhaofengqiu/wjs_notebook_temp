@@ -12,7 +12,7 @@
 	镜像存在一个唯一的id，即tag标签，表示唯一的版本号。
 ## 查看当前存在那些容器 
 	docker ps -a
-  ![image.png](pictures/u3lsia6lk.png)
+  <img src="pictures/18xokoq4j5j.png" width="600" />
 ## 创建容器 
 	docker run -tid IMAGE_ID 
 		-ti 表示用交互的形式来创建容器
@@ -30,3 +30,7 @@
 	docker run -tid --name CONTAINER_NAME CONTAINER_ID
 ## 容器封装成镜像
 docker commit   CONTAINER_ID IOS_NAME:version
+
+```{.python .input}
+
+```
