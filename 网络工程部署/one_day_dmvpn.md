@@ -59,6 +59,3 @@ R4
 ![image.png](pictures/8kwwequqtjf.png)
 
 
-```{.python .input}
-
-```
