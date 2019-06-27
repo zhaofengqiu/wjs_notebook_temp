@@ -169,20 +169,25 @@ TLS协议分类：
 #### 封装发送信息
 ##### 持卡人封装发送信息
  
-<img src="pictures/s0mvm0nemt.png" width="600px" />
-![](pictures/vhuc1mnxorn.png)
+<img src="pictures/s0mvm0nemt.png" width="600px" />  
+
+![](pictures/vhuc1mnxorn.png)  
+
 其中SKC是发送者的私钥，H是报文摘要算法。PKA是商家的公钥.双方会话密钥通过PKA加密后生成数字封面
 ##### 商家封装发送信息
  
-<img src="pictures/rgoinn328zn.png" width="600px" />
+<img src="pictures/rgoinn328zn.png" width="600px" />  
+
 #### 商家认证发送者身份和解密数据过程
  
-<img src="pictures/8xidr2osmpk.png" width="500px" />
+<img src="pictures/8xidr2osmpk.png" width="500px" />  
+
 其中SKA指的是商家的私钥，PKC指的是持卡人的公钥。在这里我们需要使用公钥来解密数字签名，从而获取到信息.
 
 #### 购买请求消息封装过程  
 
-<img src="pictures/kxdapvdhpcr.png" width="200px" />
+<img src="pictures/kxdapvdhpcr.png" width="200px" />  
+
 PKA是商家的公钥，PKG指的是支付网关的公钥。最终生成的购买请求消息由持卡人发给商家，而购买请求中关于支付网关的部分将由商家转发给支付网关  
 
 #### 商家鉴别购买请求消息
@@ -191,11 +196,14 @@ PKA是商家的公钥，PKG指的是支付网关的公钥。最终生成的购�
 
 #### 商家封装授权请求消息
  
-<img src="pictures/atswv2yanit.png" width="400px" />
+<img src="pictures/atswv2yanit.png" width="400px" />  
+
 PKG指的是支付网关的公钥,SKA指的是商家的私钥
 
-#### 支付网关验证授权请求消息
-<img src="pictures/c84pu2bxc46.png" width="400px" />
+#### 支付网关验证授权请求消息  
+
+<img src="pictures/c84pu2bxc46.png" width="400px" />  
+
 
 #### 商家请求支付请求消息  
 
