@@ -72,7 +72,7 @@ RSA数字签名认证
 <img src="pictures/s66jlrimjlg.png" width="600px" />  
 
 #### IPsec的AH和ESP  
-
+注意这里的AH和ESP是在整个传输过程中都要遵循的，而不单单只是在创建连接的时候进行。
 认证头:所有数据都是明文的，提供认证（数字签名）和完整性（散列算法）的功能
  
 <img src="pictures/j970lyztdx9.png" width="600px" />
@@ -114,6 +114,7 @@ IKE例子举例
 1. 协商IKE的安全策略集（如加密方式、DH算法等）
 2. 使用前面协商出来的DH算法来交换密钥，交换之后双方就有了一个会话密钥
 3. 通过会话密钥来加密鉴定数据（PSK、RSA数字签名认证）
+总的来说就是最后通过DH算法交换会话密钥。
 ![image.png](pictures/ul68k3s4ph.png)  
 <img src="pictures/vp3ag65fiq.png" width="600px" />
 
