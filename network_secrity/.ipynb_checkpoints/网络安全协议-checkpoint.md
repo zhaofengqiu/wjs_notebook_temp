@@ -207,15 +207,18 @@ TLS协议分类：
 
 PKA是商家的公钥，PKG指的是支付网关的公钥。最终生成的购买请求消息由持卡人发给商家，而购买请求中关于支付网关的部分将由商家转发给支付网关  
 
-#### 商家鉴别购买请求消息
- 
-<img src="pictures/gsjal1muk0l.png" width="600px" />
+#### 商家鉴别购买请求消息和发送请求到支付网关
+##### 商家鉴别购买请求消息  
 
-#### 商家封装授权请求消息
- 
+<img src="pictures/gsjal1muk0l.png" width="600px" />  
+
+#####  发送请求到支付网关  
+
 <img src="pictures/atswv2yanit.png" width="400px" />  
 
 PKG指的是支付网关的公钥,SKA指的是商家的私钥
+ 
+
 
 #### 支付网关验证授权请求消息  
 
