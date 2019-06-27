@@ -54,6 +54,8 @@ ASA(config)#nat (inside)  nat_id   net_addr  global_mask
 ASA(config)# static (internal_if_name, external_if_name) protocol {interface|out_ip} [out_port] inside_ip [in_port ]  [netmark global_mask]
 
 ```
+
+
 如：
 static (inside,outside) 1.1.1.1 192.168.0.100 netmask 255.255.255.255 ////将外网IP地址1.1.1.1 做静态映射到 内网IP地址 192.168.0.100
 
@@ -71,7 +73,3 @@ ASA(config)# nat (inside) 1 192.168.1.0 255.255.255.0
 ASA(config)# global (outside) 1 interface  //global表示全局默认NAT地址池，2为编号
 ```
 
-
-```{.python .input}
-
-```
