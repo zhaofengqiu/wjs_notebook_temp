@@ -154,6 +154,8 @@ TLS协议分类：
 <img src="pictures/mqg034mrle8.png" width="600px" />  
 
 ### SET协议实现电子交易  
+
+
 双重签名
  
 <img src="pictures/xwy8z2u2fpq.png" width="600px" />
@@ -165,7 +167,8 @@ TLS协议分类：
 
 支付网关获得OMD,再加上支付信息算出双重数字签名来验证的
 
----
+下面来讲一下电子交易过程  
+<img src="pictures/m1dzoc4o16o.png" width="600px" />
 #### 封装发送信息
 ##### 持卡人封装发送信息
  
