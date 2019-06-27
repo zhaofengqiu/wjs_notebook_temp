@@ -111,10 +111,12 @@ IKE例子举例
 ![image.png](pictures/osepjzk8ba8.png)  
 <img src="pictures/vp3ag65fiq.png" width="600px" />
 建立传输通道
-1. 协商IKE的安全策略集（如加密方式、DH算法等）
+1. 协商IKE的安全策略集（如加密方式、DH算法、预共享密钥、散列算法等）
 2. 使用前面协商出来的DH算法来交换密钥，交换之后双方就有了一个会话密钥
-3. 通过会话密钥来加密鉴定数据（PSK、RSA数字签名认证）
-总的来说就是最后通过DH算法交换会话密钥。
+3. 通过会话密钥来加密鉴定数据（PSK、RSA数字签名认证）  
+
+总的来说就是最后通过DH算法交换会话密钥。  
+
 ![image.png](pictures/ul68k3s4ph.png)  
 <img src="pictures/vp3ag65fiq.png" width="600px" />
 
