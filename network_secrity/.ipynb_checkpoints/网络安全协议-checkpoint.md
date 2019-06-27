@@ -60,7 +60,8 @@ IPSec提供了下面的安全服务:
 #### IPsec组成
   
 <img src="pictures/vp3ag65fiq.png" width="600px" />
-值得注意的是选择AH与ESP的不同会导致下面选择的完全不同。  
+值得注意的是选择AH与ESP的不同会导致下面选择的完全不同。会导致会不会选择加密算法，在整个传输过程中，如果采用AH算法则在传输过程中是以明文形式进行传输。  
+
 
 Psk指的是预共享密钥
  
@@ -70,7 +71,7 @@ RSA数字签名认证
  
 <img src="pictures/s66jlrimjlg.png" width="600px" />  
 
-##### IPsec的AH和ESP  
+#### IPsec的AH和ESP  
 
 认证头:所有数据都是明文的，提供认证（数字签名）和完整性（散列算法）的功能
  
