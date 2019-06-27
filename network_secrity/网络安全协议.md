@@ -60,10 +60,12 @@ IPSec提供了下面的安全服务:
 #### IPsec组成
   
 <img src="pictures/vp3ag65fiq.png" width="600px" />
-值得注意的是选择AH与ESP的不同会导致下面选择的完全不同。
+值得注意的是选择AH与ESP的不同会导致下面选择的完全不同。  
+
 Psk指的是预共享密钥
  
-<img src="pictures/9aazlablpib.png" width="600px" />
+<img src="pictures/9aazlablpib.png" width="600px" />  
+
 RSA数字签名认证
  
 <img src="pictures/s66jlrimjlg.png" width="600px" />  
