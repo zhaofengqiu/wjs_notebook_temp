@@ -30,7 +30,3 @@
 	docker run -tid --name CONTAINER_NAME CONTAINER_ID
 ## 容器封装成镜像
 docker commit   CONTAINER_ID IOS_NAME:version
-
-```{.python .input}
-
-```
