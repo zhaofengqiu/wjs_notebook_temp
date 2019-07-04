@@ -59,32 +59,32 @@ IPSec提供了下面的安全服务:
 
 #### IPsec组成
   
-<img src="pictures/vp3ag65fiq.png" width="600px" />
+<img src="../pictures/vp3ag65fiq.png" width="600px" />
 值得注意的是选择AH与ESP的不同会导致下面选择的完全不同。会导致会不会选择加密算法，在整个传输过程中，如果采用AH算法则在传输过程中是以明文形式进行传输。  
 
 
 Psk指的是预共享密钥
  
-<img src="pictures/9aazlablpib.png" width="600px" />  
+<img src="../pictures/9aazlablpib.png" width="600px" />  
 
 RSA数字签名认证
  
-<img src="pictures/s66jlrimjlg.png" width="600px" />  
+<img src="../pictures/s66jlrimjlg.png" width="600px" />  
 
 #### IPsec的AH和ESP  
 注意这里的AH和ESP是在整个传输过程中都要遵循的，而不单单只是在创建连接的时候进行。
 认证头:所有数据都是明文的，提供认证（数字签名）和完整性（散列算法）的功能
  
-<img src="pictures/j970lyztdx9.png" width="600px" />
+<img src="../pictures/j970lyztdx9.png" width="600px" />
 传输/隧道协议的认证头
  
-<img src="pictures/g901s2t3799.png" width="600px" />
+<img src="../pictures/g901s2t3799.png" width="600px" />
 封装安全载荷：载荷数据是加密的，提供：加密、认证和完整性的功能。
  
-<img src="pictures/v3xp0syfkg.png" width="600px" />
+<img src="../pictures/v3xp0syfkg.png" width="600px" />
 传输/隧道模式下封装的安全载荷
  
-<img src="pictures/gtqp1trq28n.png" width="600px" />  
+<img src="../pictures/gtqp1trq28n.png" width="600px" />  
 
 ####  IPsec的IKE协议  
 
