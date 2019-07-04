@@ -232,7 +232,3 @@ PKG指的是支付网关的公钥,SKA指的是商家的私钥
 #### 商家请求支付请求消息  
 
 <img src="pictures/2gp2py46yzh.png" width="400px" />
-
-```{.python .input}
-
-```
