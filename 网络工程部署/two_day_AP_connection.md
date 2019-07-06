@@ -18,7 +18,3 @@ IFrame('pictures/企业园区网络实.pdf', width=1000, height=1000)
  }
 ]
 ```
-
-```{.python .input}
-
-```
