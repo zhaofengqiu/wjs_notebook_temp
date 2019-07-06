@@ -48,6 +48,23 @@ feistel结构:
 feistel结构要点：分组，密钥，轮函数  
 
 3. DES、3DES和AES的区别
-![image.png](../pictures/ehfy7nwnau.png)
+![image.png](../pictures/ehfy7nwnau.png)  
+#### DES  
+
+i. 使用16轮操作的feistel结构密码
+ii. 分组长度为64位
+iii. 使用56位的密钥
+iv. 每一轮使用48位的子密钥，每一个子密钥都是由56位的密钥的子集构成
+<img src="../pictures/phila7ma5mi.png" width="600" />
+#### 3DES算法
+在DES的基础上进行三重和双密钥加密的算法
+![image.png](../pictures/ehd2lc9ugcg.png)
+如果k1=k2的话就是DES算法，可以和DES算法很好的兼容   
+
+####  AES算法  
+以8位字节为单位，明文分组长度为16字节（128bite）
+<img src="../pictures/92avowlzl19.png" width="600" />
+ 实现过程：
+ <img src="../pictures/ctxnj9lab8a.png" width="600" />
 
 
