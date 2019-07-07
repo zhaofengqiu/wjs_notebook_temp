@@ -38,8 +38,7 @@ web服务器只负责创建SQL查询，解析结果，将结果显示给用户�
         返回默认服务器的出错页面，这个是不会将数据库的报错暴露在网页上的
         2. HTTP状态码异常  
         返回不寻常的http状态码，比如302和500.收到302或者500是个好事情，说明我们已经以某种方式干预了程序的正常运行
-	
-	
+
 ## 确定sql注入点
 当识别处异常后，我们需要操作用户数据输入并且分析服务器响应来确定注入点，即构造出一条有效的SQL语句来确定SQL注入漏洞
 1. 数据类型  
@@ -50,26 +49,35 @@ web服务器只负责创建SQL查询，解析结果，将结果显示给用户�
 内联注入是指向查询注入一些sql代码后，原来的查询仍然会被全部执行。就是构造sql语句  
 字符串内联构造注入  
 下面有个例子，原来的sql语句
+
 ```sql      
 select *
 From administrators
 where username = '[USER ENTRY]' and PASSWORD = '[USER ENTRY]';
 ```
+
+
 内联注入（对账号）
+
 ```sql
 select *
 From administrators
 where[ (username = '[USER ENTRY]')  or '1=1] or (1' ='1' and PASSWORD = '[USER ENTRY]';) 
 ```
+
+
 这样子构造就会成为一个永真语句。即账号输入 [USER ENTRY]  or '1=1 or 1' ='1' 
 内联注入（对密码）
+
 ```sql
 select *
 From administrators
 where (username = '[USER ENTRY]' and PASSWORD = '[USER ENTRY]' ) or '1'='1';
 ```
+
+
 这样子也构造出了永真语句。对于这题来说，内联注入就是构造一条使得where永真的语句字符串内联注入的特征值
-				
+
 ## 数字形内联注入  
 与字符型不一样的地方在于，不需要使用单引号，同时也可以用式子来表示  
 + 终止式sql注入  
@@ -86,8 +94,3 @@ where (username = '[USER ENTRY]' and PASSWORD = '[USER ENTRY]' ) or '1'='1';
     + Oracle 数据库
     + PostgreSQL数据库  
     使用pg_sleep（）函数
-
-			
-
-
-
