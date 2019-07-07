@@ -90,6 +90,4 @@ where (username = '[USER ENTRY]' and PASSWORD = '[USER ENTRY]' ) or '1'='1';
 			
 
 
-```{.python .input}
 
-```
