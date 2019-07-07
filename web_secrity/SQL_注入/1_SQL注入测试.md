@@ -91,9 +91,22 @@ where (username = '[USER ENTRY]' and PASSWORD = '[USER ENTRY]' ) or '1'='1';
 
 我们可以向数据库注入时间延迟，查看服务器的响应是否已经产生了延迟。web服务器虽然可以隐藏错误或者数据，但必须等待数据库返回结果。因此可以用它来确认是否存在sql注入漏洞
     + SQL Server时间注入漏洞  
-    waitfor delay 'hours:minutes:seconds'如：
-    + Mysqla
-    + Oracle 数据库
-    + PostgreSQL数据库  
-    使用pg_sleep（）函数
+    waitfor delay 'hours:minutes:seconds'如：  
     
+![image.png](../pictures/3100uscfqm8.png)  
+
+    + Mysql
+    
+![image.png](../pictures/ej0x1ggfle.png)  
+
+    + Oracle 数据库
+    
+![image.png](../pictures/px3ww215jxr.png)  
+
+    + PostgreSQL数据库  
+    使用pg_sleep（）函数  
+    
+![image.png](../pictures/b7tx2um2xvt.png)
+    
+
+
