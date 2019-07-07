@@ -1,5 +1,6 @@
 >今天实践的是企业园区网络实践。
 
+
 ```{.python .input  n=5}
 from IPython.display import IFrame
 IFrame('pictures/企业园区网络实.pdf', width=1000, height=1000)
