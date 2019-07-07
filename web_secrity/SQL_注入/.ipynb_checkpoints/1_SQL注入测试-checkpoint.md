@@ -81,32 +81,31 @@ where (username = '[USER ENTRY]' and PASSWORD = '[USER ENTRY]' ) or '1'='1';
 ## 数字形内联注入  
 与字符型不一样的地方在于，不需要使用单引号，同时也可以用式子来表示  
 
-+ 终止式sql注入  
-使用注释代替空格
+## 终止式sql注入  
+
++ 使用注释代替空格
+<img src="../pictures/hiti6sxaaqm.png" width="600" />
 + 使用注释终止sql语句  
 使用注释，可以很好的终止一部分原sql语句。我们可以很好的看到and password=' '被注释终止掉了。有哪些注释特征值
+<img src="../pictures/okx5fy81oog.png" width="600" />
+<img src="../pictures/tp8xwgz4ktm.png" width="600" />
+<img src="../pictures/rf2r6jaz2us.png" width="600" />
 + 执行多条语句  
-我们可以通过执行多条语句来执行updata语句，即第一条是应用程序的查询语句，第二条就是updata语句
-+ 时间盲注  
+我们可以通过执行多条语句来执行updata语句，即第一条是应用程序的查询语句，第二条就是updata语句  
+<img src="../pictures/pylq1wrjoaf.png" width="600" />  
 
+## 时间盲注  
 我们可以向数据库注入时间延迟，查看服务器的响应是否已经产生了延迟。web服务器虽然可以隐藏错误或者数据，但必须等待数据库返回结果。因此可以用它来确认是否存在sql注入漏洞
-    + SQL Server时间注入漏洞  
+    1. SQL Server时间注入漏洞  
     waitfor delay 'hours:minutes:seconds'如：  
-    
-![image.png](../pictures/3100uscfqm8.png)  
-
-    + Mysql
-    
-![image.png](../pictures/ej0x1ggfle.png)  
-
-    + Oracle 数据库
-    
-![image.png](../pictures/px3ww215jxr.png)  
-
-    + PostgreSQL数据库  
+<img src="../pictures/3100uscfqm8.png" width="600" />
+    2. Mysql
+<img src="../pictures/ej0x1ggfle.png" width="600" />
+    3. Oracle 数据库
+<img src="../pictures/px3ww215jxr.png" width="600" />
+    4. PostgreSQL数据库  
     使用pg_sleep（）函数  
-    
-![image.png](../pictures/b7tx2um2xvt.png)
+<img src="../pictures/b7tx2um2xvt.png" width="600" />
     
 
 
