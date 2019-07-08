@@ -5,23 +5,24 @@
 1. 获取其他数据库的名称  
 master..sysdatabases数据库中存储着其他数据库的一些信息
 <img src="../pictures/9dm4tfpci6f.png" width="600" />
-2返回其他数据库的名称
-	获取数据库中数据表的名称
-		枚举某个数据库所包含的表。每个数据库都有一张名为sysobjects的表，其中刚好包含了数据表的信息，比如列名。当然，其中也包含了很多我们不需要的数据，所以我们需要通过指定自己感兴趣的行（类型为U）来关注用户定义的对
+作用：返回其他数据库的名称  
+2. 获取数据库中数据表的名称  
+枚举某个数据库所包含的表。每个数据库都有一张名为sysobjects的表，其中刚好包含了数据表的信息，比如列名。当然，其中也包含了很多我们不需要的数据，所以我们需要通过指定自己感兴趣的行（类型为U）来关注用户定义的对  
+3. 获取表中的数据  
+上面已经获取到了数据库中的数据表的列信息，所以我们可以直接使用union来获取对应的数据
+
 		
-	获取表中的数据
-		上面已经获取到了数据库中的数据表的列信息，所以我们可以直接使用union来获取对应的数据
-		
-		
-Mysql 快速获取
-	获取数据库的名称
-		information_schema.SCHEMATA提供了当前mysql实例中所有数据库的信息。是show databases的结果取之此表
-		select * from information_schema.SCHEMATA;
-		
-		
-	获取数据库中表的信息
-		information_schema.TABLES中存放着mysql所有的数据表
-		select TABLE_SCHEMA,TABLE_NAME,TABLE_TYPE,ROW_FORMAT,TABLE_ROWS,AVG_ROW_LENGTH  from information_schema.TABLES
+
+
+## Mysql 快速获取
+1. 获取数据库的名称  
+information_schema.SCHEMATA  
+提供了当前mysql实例中所有数据库的信息。是show databases的结果取之此表
+select * from information_schema.SCHEMATA;
+<img src="../pictures/9kiz0cipthi.png" width="600" />  
+2. 获取数据库中表的信息  
+information_schema.TABLES中存放着mysql所有的数据表  
+select    TABLE_SCHEMA,TABLE_NAME,TABLE_TYPE,ROW_FORMAT,TABLE_ROWS,AVG_ROW_LENGTH  from information_schema.TABLES
 		
 	获取数据库中列的信息
 		information_schema.COLUMNS表：提供了表中的列信息。详细表述了某张表的所有列以及每个列的信息
