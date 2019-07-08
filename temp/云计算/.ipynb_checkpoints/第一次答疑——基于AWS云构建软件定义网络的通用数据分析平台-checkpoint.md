@@ -8,7 +8,7 @@
 
 
 3. 数据湖处理流程
-<img src="../pictures/vs5cux5gc3.png" width="600" />  
+<img src="../pictures/9ogvwq94w87.png" width="600" />
 
     1. 将不同数据源,存储到S3存储桶。
     2. 由于来自于不同的数据源，导致数据的特性不一样，所以我们需要使用glue。当数据存储到对象存储中，会自动从对象存储中爬取数据。这个爬取的前提就是出发事件。
@@ -17,5 +17,16 @@
 3. AWS GLUE服务
 <img src="../pictures/afbx6dfpqgd.png" width="600" />
 
+
+## EMR
+>在云中托管的 Hadoop集群
+
+EMR优点：
+<img src="../pictures/hfybtqmqp3f.png" width="400" />
+与其他AWS一起使用
+<img src="../pictures/rpyw94uvx8.png" width="600" />
+EMR是大数据处理的核心
+
+## S3可信数据源，支持多个集群。
 
 
