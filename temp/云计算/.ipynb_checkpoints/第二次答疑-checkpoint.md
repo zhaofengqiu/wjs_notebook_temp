@@ -5,3 +5,30 @@
 <img src="../pictures/o63ipnx35h.png" width="600" />
     1.数据源有半结构化的、结构化的
     
+
+## demo
+#### 数据源
+
+<img src="../pictures/lhkk7dwy85.png" width="600" />
+
+
+
+
+##### AWS数据分析相关服务
+
+<img src="../pictures/s9d9nd4ksw.png" width="600" />
+
+
+
+#### 数据发现与分类
+GLUE——好处自动进行数据分析
+结果：<img src="../pictures/o9k6tv7jg0i.png" width="600" />
+1. 选择数据源
+<img src="../pictures/sqrcx6wquer.png" width="600" />
+2. 选择规则
+<img src="../pictures/nvwt1ev3je.png" width="600" />
+3. 设置输出
+<img src="../pictures/h44fovma7zd.png" width="600" />
+所以我们需要设置的是一个存储一个GLUE
+
+
