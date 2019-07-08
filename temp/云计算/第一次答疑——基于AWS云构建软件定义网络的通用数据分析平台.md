@@ -23,6 +23,10 @@
 
 EMR优点：
 <img src="../pictures/hfybtqmqp3f.png" width="400" />
-与其他AWSyi'qi's
+与其他AWS一起使用
+<img src="../pictures/rpyw94uvx8.png" width="600" />
 EMR是大数据处理的核心
+
+## S3可信数据源，支持多个集群。
+
 
