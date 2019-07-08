@@ -23,22 +23,27 @@ Postgre|SQLSELECT version()
 @@language|前所使用的语言的名称
 @@spid|前用户的进程id
 
-盲查询
+## 盲查询  
 在盲查询中，我们无法获取到数据库的响应，即无法使用数据库内置变量。我们可以通过数据库之间微小的差别来判断数据库类别。
-从字符串来判断数据库类别
+### 从字符串来判断数据库类别  
+<img src="../pictures/arwftihkekw.png" width="600" />
 
-从数字函数判断数据库类别
+### 从数字函数判断数据库类别
 
-使用每个sql专属的特殊结构SQL server
-成功地注入WAITFOR DELAY
-PostgreSQL
-成功注入SELECT pg_sleep(10)
-Mysql
-在一个“/*”序列后再跟一个“*／”序列，位于两者之间的即为注释.如果注释开头的部分添加感叹号，并在后面跟上数据库的版本编号，只要安装的数据库版本高于或者等于注释中的版本编号，那么该注释将会被解析成代码。如：
+<img src="../pictures/tff7ucjh28t.png" width="600" />
+
+### 使用每个sql专属的特殊结构SQL server
+
+1. SQL server
+    成功地注入WAITFOR DELAY
+2. PostgreSQL
+    成功注入SELECT pg_sleep(10)
+3. Mysql
+    在一个“/*”序列后再跟一个“*／”序列，位于两者之间的即为注释.如果注释开头的部分添加感叹号，并在后面跟上数据库的版本编号，只要安装的数据库版本高于或者等于注释中的版本编号，那么该注释将会被解析成代码。如：
+```sql
 SELECT 1 /*!40119+1*/
+```
 Mysql 将会返回2这个结果，而其他数据库只会返回1。
-
-~test~
 
 ```{.python .input}
 
