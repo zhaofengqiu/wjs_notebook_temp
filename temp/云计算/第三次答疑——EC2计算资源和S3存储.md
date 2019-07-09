@@ -60,6 +60,11 @@ S3可以和Lambda一起使用，即S3发生了改变，可以使用对应的事�
 ## EC2
 >EC2类似一个小的linux系统的docker实例，其中的镜像是从AMI种获取。
 
-这个是云计算计算服务（有CPU和GPU计算资源），是一个虚拟机服务
+这个是云计算计算服务（有CPU和GPU计算资源），是一个虚拟机服务。
 
 
+
+
+### Demo1——使用User data在EC2安装apache服务
+<img src="../pictures/qpe01qzr26.png" width="600" />
+### Demo2——使用AMI安装软件和数据库
