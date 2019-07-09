@@ -75,10 +75,3 @@ S3可以和Lambda一起使用，即S3发生了改变，可以使用对应的事�
 2. 使用模板文件，创建堆栈
 <img src="../pictures/ttyjrnm9yl9.png" width="600" />
 使用堆栈直接创建自定义的AMI（镜像）。
-
-
-
-
-```{.python .input}
-
-```
