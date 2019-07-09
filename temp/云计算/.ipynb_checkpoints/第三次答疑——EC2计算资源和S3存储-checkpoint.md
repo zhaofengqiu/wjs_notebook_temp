@@ -28,8 +28,11 @@
 ### S3的存储的分类
 S3存储分为3种，标准S3，Infrequent Access,Amazon Glacier。其中Infrequent Access自动选择将数据放入标准S3还是冰川S3
 <img src="../pictures/si02eufhm5b.png" width="600" />
-S3可以和Lambda一起使用，即S3发生了改变，可以使用对应的事件。
+S3可以和Lambda一起使用，即S3发生了改变，可以使用对应的事件。三种S3的存储使用情况：  
+<img src="../pictures/2k64t2tc3zn.png" width="300" />
+
+#### demo——
 
 ```{.python .input}
-|
+
 ```

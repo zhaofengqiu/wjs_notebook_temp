@@ -31,4 +31,11 @@ S3存储分为3种，标准S3，Infrequent Access,Amazon Glacier。其中Infrequ
 S3可以和Lambda一起使用，即S3发生了改变，可以使用对应的事件。三种S3的存储使用情况：  
 <img src="../pictures/2k64t2tc3zn.png" width="300" />
 
-|
+
+
+#### demo——使用GLUE和Athena创建数据湖
+1. 创建存储桶
+<img src="../pictures/ppceg74yx5.png" width="600" />
+
+2. 上传文件
+
