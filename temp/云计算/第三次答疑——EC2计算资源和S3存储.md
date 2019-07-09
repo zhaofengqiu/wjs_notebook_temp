@@ -37,5 +37,10 @@ S3可以和Lambda一起使用，即S3发生了改变，可以使用对应的事�
 1. 创建存储桶
 <img src="../pictures/ppceg74yx5.png" width="600" />
 
+
+
 2. 上传文件
+![image.png](../pictures/ibp32f17h3.png)
+
+3. 使用glue服务
 
