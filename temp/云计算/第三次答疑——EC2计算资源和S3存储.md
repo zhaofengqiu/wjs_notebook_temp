@@ -42,11 +42,11 @@ S3可以和Lambda一起使用，即S3发生了改变，可以使用对应的事�
 2. 上传文件
 ![image.png](../pictures/ibp32f17h3.png)
 
-3. 使用glue服务
+3. 创建一个IAM的Role
+让role具备S3的访问权限以及GLUE的权限。即通过规则将S3和GLUE的权限联系起来。
 
 
-
-
+ 使用glue服务
 
 EC2类似一个小的linux系统的docker实例，其中的镜像是从AMI种获取。
 
