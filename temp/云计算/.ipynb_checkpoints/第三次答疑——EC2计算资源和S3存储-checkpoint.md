@@ -42,5 +42,43 @@ S3可以和Lambda一起使用，即S3发生了改变，可以使用对应的事�
 2. 上传文件
 ![image.png](../pictures/ibp32f17h3.png)
 
-3. 使用glue服务
+3. 创建一个IAM的Role
+让role具备S3的访问权限以及GLUE的权限。即通过规则将S3和GLUE的权限联系起来。
+<img src="../pictures/i82ko1tcix.png" width="600" />
 
+
+4. 使用glue服务
+创建数据库
+<img src="../pictures/bwgf7vjsppw.png" width="300" />
+使用爬虫来向GLUE中添加table
+<img src="../pictures/ksdhgiko12e.png" width="600" />
+<img src="../pictures/d8npxbhqoe8.png" width="600" />
+<img src="../pictures/1w9utbucn0n.png" width="600" />
+
+
+
+## EC2
+>EC2类似一个小的linux系统的docker实例，其中的镜像是从AMI种获取。
+
+这个是云计算计算服务（有CPU和GPU计算资源），是一个虚拟机服务。
+
+
+
+
+### Demo1——使用User data在EC2安装apache服务
+<img src="../pictures/qpe01qzr26.png" width="600" />  
+
+
+
+### Demo2——使用AMI安装软件和数据库
+1. 使用CloudFormation
+2. 使用模板文件，创建堆栈
+<img src="../pictures/ttyjrnm9yl9.png" width="600" />
+使用堆栈直接创建自定义的AMI（镜像）。
+
+
+
+
+```{.python .input}
+
+```

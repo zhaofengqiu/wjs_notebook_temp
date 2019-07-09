@@ -66,5 +66,19 @@ S3可以和Lambda一起使用，即S3发生了改变，可以使用对应的事�
 
 
 ### Demo1——使用User data在EC2安装apache服务
-<img src="../pictures/qpe01qzr26.png" width="600" />
+<img src="../pictures/qpe01qzr26.png" width="600" />  
+
+
+
 ### Demo2——使用AMI安装软件和数据库
+1. 使用CloudFormation
+2. 使用模板文件，创建堆栈
+<img src="../pictures/ttyjrnm9yl9.png" width="600" />
+使用堆栈直接创建自定义的AMI（镜像）。
+
+
+
+
+```{.python .input}
+
+```
