@@ -17,7 +17,8 @@
 [https://ctf.bugku.com/](https://ctf.bugku.com/)
     + 黑吧安全网[http://www.myhack58.com/](http://www.myhack58.com/)
           
-## 在线工具类 待补充
+## 在线工具类 待补充  
+1. [密码:786SnN](https://www.fageka.com/Home/Index/tiqu.html?id=H20190713102948lXAqF51670)
 
 ## Writeups  待补充
 1. 第十届全国大学生信息安全竞赛writeup [https://www.anquanke.com/post/id/86431](https://www.anquanke.com/post/id/86431)
@@ -30,9 +31,6 @@
 黑客游戏之let's hack  
 Monyer's Little Game 梦之光芒的小游戏  
 黑客丛林之旅http://www.fj543.com/hack/
-
-
-
 
 ```{.python .input}
 
