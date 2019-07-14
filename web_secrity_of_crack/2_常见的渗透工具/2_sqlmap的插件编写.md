@@ -20,8 +20,23 @@ sqlmap http://xxx/ --tamper mytamper
 ```
 其中payload就是http://xxx/
 tamper例子，将payload替换成base64编码后的payload。
+```python
+import base64
+from lib.core.enums import PRIORITY
+from lib.core.settings import UNICODE_ENCODING
+__priority__ = PRIORITY.LOW
+def dependencies():
+    pass
+def tamper(payload, **kwargs):
+    return base64.b64encode(payload.encode(UNICODE_ENCODING)) if payload else payload
 ```
+## 常见tamper插件
+1. apostrophemask.py，将引号替换为UTF- 8，用于过滤单引号
+<img src="../pictures/aikzpotpvqn.png" width="600" />
 
-```
 
 
+2. base64encode.py 作用： 替换为base64编码。
+<img src="../pictures/whhtqapm84r.png" width="600" />
+3. multiplespaces.py 作用：围绕SQL关键宇添加多个空格。ia4vjakfrs
+<img src="../pictures/ia4vjakfrs.png" width="600" />

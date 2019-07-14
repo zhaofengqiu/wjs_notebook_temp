@@ -16,7 +16,23 @@ def tamper(payload, **kwargs):
 2. dependencies函数声明该脚本适用／不适用的范围，可以为空。
 3. tamper就是我们的插件，其中payload就是我们的注入网址，kwargs就是后面的参数，以字典的形式传入，如：
 ```
-sqlmap http://xxx/ --tamper mytamper xx 
+sqlmap http://xxx/ --tamper mytamper 
+```
+其中payload就是http://xxx/
+tamper例子，将payload替换成base64编码后的payload。
+```python
+import base64
+from lib.core.enums import PRIORITY
+from lib.core.settings import UNICODE_ENCODING
+__priority__ = PRIORITY.LOW
+def dependencies():
+    pass
+def tamper(payload, **kwargs):
+    return base64.b64encode(payload.encode(UNICODE_ENCODING)) if payload else payload
 ```
 
 
+
+```{.python .input}
+
+```
