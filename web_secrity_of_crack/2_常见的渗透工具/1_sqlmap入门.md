@@ -95,8 +95,18 @@ level 5| 自动破解出cookie 、 XFF等头部注入。
 
 2. --is-dba 当前用户是否为dba
 3. --roles ：列出数据库管理员角色
-4. --referer: HTTP Referer 头部注入
+4. --referer: HTTP Referer 头部伪造。   
+指定该字段，会修改sqlmap发送的http报文中的refer字段
+5. --sql-shell 运行自定义 SOL 语句
+```
+sqlmap.py -u http://xxx/ --sql-shell
+```
+会创建一个sql shell 交互界面，如下图
+<img src="../pictures/blq8dh3rbhg.png" width="600" />
 
+6. --os-cmd ，--as-shell ：运行任意操作系统命令
+7. --file-read:：从数据库服务器申读取文件
+8. --file-write --file-dest 上传文件到数据库服务器申
 
 
 ```{.python .input}
