@@ -30,6 +30,28 @@ whois www.baidu.com
 
 
 ### 收集子域名信息
-1. 使用工具
-用于子域名检测的工具主要有Layer子域名挖掘机、 K8 、 wydomain , Sublist3r、dnsmaper 、 subDomainsBrute 、 Maltego CE等。推荐Layer子域名挖掘机、 Sublist3r和subDomainsBrute 。
+1. 使用工具  
+Layer子域名挖掘机、 Sublist3r和subDomainsBrute 。  
+Layer是图形化界面如下
+<img src="../pictures/54o84ykyu7l.png" width="400" />
+subDomainsBrute 
+其的特点是可以用小字典递归地发现三级域名、四级域名,甚至
+五级域名等不容易被探测到的域名，使用方法  
 
+```shell
+python subDomainsbrute.py xxxx.com
+```
+2. 使用搜索引擎  
+使用语法
+```
+site:baidu.com
+```
+3. 使用第三方网站  
+DNSdumpster网站（https://:11dnsdumpster.com/）
+4. 使用CA下的证书透明度项目
+https://crt.sh 和censys: https://censys.io .
+
+
+
+
+###收集常用端口信息
