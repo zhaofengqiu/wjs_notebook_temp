@@ -77,7 +77,19 @@ https://crt.sh 和censys: https://censys.io .
 ## 查询真实IP
 
 一般情况下，一个域名就可以直接获取到真实的ip，但如果使用了cdn，那么就不能直接通过域名获取到真实的ip，如何绕过cdn。
+### 判断是否使用了cdn技术
 1. 本地ping
 <img src="../pictures/ub6n7e8azaf.png" width="600" />
-查看返回的师傅是IP
-2. 在线
+查看返回的是否是IP
+2. 在线ping，判断ping获取到的ip是否一致。17CE网站
+ https://www.17ce.com
+ 
+ ### 绕过cdn
+ 1. 查询域名的解析记录
+ 目标很久以前并没有用过CDN，可以使用网址[NETCRAFT](https://www.netcraft.com/)查询
+ 2. 从网站的app端入手
+ 3. 
+
+```{.python .input}
+
+```
