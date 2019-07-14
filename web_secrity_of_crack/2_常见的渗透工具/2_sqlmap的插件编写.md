@@ -50,4 +50,5 @@ def tamper(payload, **kwargs):
 
 6. space2randomblank.py 作用：将空格替换为其他有效字符。
 <img src="../pictures/tic0nrpsn0j.png" width="600" />
-7. 
+7. unionalltounion.py 作用：将UNION ALL SELECT替换为UNION SELECT 。
+
