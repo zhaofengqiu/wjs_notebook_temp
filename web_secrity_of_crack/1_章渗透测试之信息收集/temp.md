@@ -23,13 +23,13 @@ whois www.baidu.com
 1. ICP备案查询网： http://www.beianbeian.com 
 2. 天眼查： http://www.tianyancha.com
 
-### 收集敏感信息
+## 收集敏感信息
 
 1. 使用搜索引擎，如Google
 <img src="../pictures/x88ib2kjwyn.png" width="400" />
 
 
-### 收集子域名信息
+## 收集子域名信息
 1. 使用工具  
 Layer子域名挖掘机、 Sublist3r和subDomainsBrute 。  
 Layer是图形化界面如下
@@ -54,4 +54,28 @@ https://crt.sh 和censys: https://censys.io .
 
 
 
-###收集常用端口信息
+## 收集常用端口信息
+1. namp
+2. 御剑高速TCP端口扫描工具
+
+### 端口的常见用途
+1. 文件传输协议
+<img src="../pictures/j2tz8inmk4.png" width="600" />
+
+2. 远程连接服务端口
+<img src="../pictures/ingfizlovgo.png" width="600" />
+
+3. web服务端口
+<img src="../pictures/p6xiautxb2.png" width="600" />
+
+4. 数据库服务端口
+<img src="../pictures/e7si4gsu0l.png" width="600" />
+
+5. 特殊端口
+<img src="../pictures/ibpvz25j0yg.png" width="600" />
+
+## 查询真实IP
+
+```{.python .input}
+
+```
