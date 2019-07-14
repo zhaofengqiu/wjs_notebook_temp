@@ -4,16 +4,19 @@
 ### tamper插件格式
 打开一个插件，可以看到文件代码如下：
 ```python
-
 from lib.core.enums import PRIORITY
-__priority__ = PRIORITY.LOW
-
+__priority__ = PRIORITY.NORMAL
 def dependencies():
     pass
 def tamper(payload, **kwargs):
-  
-
-    return re.sub(r"[^\w]", lambda match: "&#%d;" % ord(match.group(0)), payload) if payload else payload
+    return payload.replace("'", "\\'").replace('"', '\\"')
    
 ```
+1. priority定义脚本的优先级，用于有多个tamper脚本的情况
+2. dependencies函数声明该脚本适用／不适用的范围，可以为空。
+3. tamper就是我们的插件，其中payload就是我们的注入网址，kwargs就是后面的参数，以字典的形式传入，如：
+```
+sqlmap http://xxx/ --tamper mytamper 
+```
+
 
