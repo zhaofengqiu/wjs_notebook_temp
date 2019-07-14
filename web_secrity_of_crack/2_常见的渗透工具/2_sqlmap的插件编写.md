@@ -18,5 +18,10 @@ def tamper(payload, **kwargs):
 ```
 sqlmap http://xxx/ --tamper mytamper 
 ```
+其中payload就是http://xxx/
+tamper例子，将payload替换成base64编码后的payload。
+```
+
+```
 
 
