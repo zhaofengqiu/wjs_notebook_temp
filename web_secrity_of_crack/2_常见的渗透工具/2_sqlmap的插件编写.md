@@ -40,3 +40,12 @@ def tamper(payload, **kwargs):
 <img src="../pictures/whhtqapm84r.png" width="600" />
 3. multiplespaces.py 作用：围绕SQL关键宇添加多个空格。ia4vjakfrs
 <img src="../pictures/ia4vjakfrs.png" width="600" />
+
+4. space2plus.py 作用：用＋号替换空格。
+<img src="../pictures/hbfpniz6b8.png" width="600" />
+
+5. nonrecursivereplacement.py 作用：作为双重查询语句，用双重语句替代预定义的SQL关键宇（适用于非常弱 的自定义过滤器，例如将SELECT替换为空〉。
+<img src="../pictures/1gp52p66zsi.png" width="600" />
+
+
+
