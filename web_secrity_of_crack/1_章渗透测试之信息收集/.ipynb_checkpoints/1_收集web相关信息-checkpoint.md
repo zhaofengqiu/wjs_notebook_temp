@@ -12,9 +12,12 @@
 #### whois
 whois 是一个标准的互联网协议，可用于收集网络注册信息，注册的域名、 IP地址等信息。  
 1. 在kali中可以直接使用
+
 ```shell
 whois www.baidu.com
 ```
+
+
 来获取相关信息
 2. 在线查询方式  
 在线查询方式的网址一般有在线Whois查询的常用网站有  [爱站工具网](https://whois.aizhan.com)、[站长之家](http://whois.chinaz.com)和[VirusTotal](https://www.virustotal.com)
@@ -36,16 +39,21 @@ Layer是图形化界面如下
 <img src="../pictures/54o84ykyu7l.png" width="400" />
 subDomainsBrute 
 其的特点是可以用小字典递归地发现三级域名、四级域名,甚至
-五级域名等不容易被探测到的域名，使用方法  
+五级域名等不容易被探测到的域名，使用方法
 
 ```shell
 python subDomainsbrute.py xxxx.com
 ```
+
+
 2. 使用搜索引擎  
 使用语法
+
 ```
 site:baidu.com
 ```
+
+
 3. 使用第三方网站  
 DNSdumpster网站（https://:11dnsdumpster.com/）
 4. 使用CA下的证书透明度项目
@@ -92,9 +100,11 @@ https://crt.sh 和censys: https://censys.io .
  
  ### 验证是否绕过了cdn
  使用获取到的ip，直接访问。
- 
- 
 
-```{.python .input}
+## 扫描web目录
+1. DirBuster Java编写，图形化操作
+2. 御剑后台扫描珍藏版
 
-```
+
+## 社会工程
+社工库
