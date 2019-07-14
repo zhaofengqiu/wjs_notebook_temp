@@ -76,6 +76,8 @@ https://crt.sh 和censys: https://censys.io .
 
 ## 查询真实IP
 
-```{.python .input}
-
-```
+一般情况下，一个域名就可以直接获取到真实的ip，但如果使用了cdn，那么就不能直接通过域名获取到真实的ip，如何绕过cdn。
+1. 本地ping
+<img src="../pictures/ub6n7e8azaf.png" width="600" />
+查看返回的师傅是IP
+2. 在线
