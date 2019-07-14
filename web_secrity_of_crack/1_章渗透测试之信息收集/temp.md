@@ -88,7 +88,12 @@ https://crt.sh 和censys: https://censys.io .
  1. 查询域名的解析记录
  目标很久以前并没有用过CDN，可以使用网址[NETCRAFT](https://www.netcraft.com/)查询
  2. 从网站的app端入手
- 3. 
+ 3. CloudFlareWatch
+ 
+ ### 验证是否绕过了cdn
+ 使用获取到的ip，直接访问。
+ 
+ 
 
 ```{.python .input}
 
