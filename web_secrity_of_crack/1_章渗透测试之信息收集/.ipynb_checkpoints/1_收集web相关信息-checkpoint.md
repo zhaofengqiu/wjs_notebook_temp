@@ -18,6 +18,12 @@ whois www.baidu.com
 ```
 
 
+使用nmap
+```shell
+nmap --script external baidu.com
+```
+
+
 来获取相关信息
 2. 在线查询方式  
 在线查询方式的网址一般有在线Whois查询的常用网站有  [爱站工具网](https://whois.aizhan.com)、[站长之家](http://whois.chinaz.com)和[VirusTotal](https://www.virustotal.com)
