@@ -37,27 +37,38 @@ unioon select 1,2,(select table_name from information_schema.tables table_name='
 
 成功获取返回得到数据表，emails.同时修改limit n,m中的n和m就可以得到不同的表名。
 3. 获取字段名，以emails表为例子。
+
 ```sql
 union select 1,2,(select column_name from information_schema.columns where table_schema='sql' and table_name = 'emails' limit 0,1;),3
 ```
+
+
 修改limit值就可以得到全部的字段名
 
 4. 查询数据
 现在已经知道了数据库的名字、数据表的名字、字段的名字，要想获取到数据就变得很简单的。以上面获取到的数据库、数据表、字段为例。
+
 ```sql
     union select 1,2,(select email_id from sql.emails limit 0,1)
 ```
+
+
 修改limit就可以获取到全部的数据
 
 
+## 报错注入攻击
+当sql语句出现错误的时候，如果前端没有进行过滤，就会将报错信息显示出到前端来。所以报错注入的本质，就是从报错中获取信息。
 
 ## boolean注入
 
 返回结果，只有两种情况，比如
 
-## 报错注入攻击
-当sql语句出现错误的时候，如果前端没有进行过滤，就会将报错信息显示出到前端来。所以报错注入的本质，就是从报错中获取信息。
 
-```{.python .input}
+
+
+## 时间注入
+时间注入与boolean注入非常相近，也可以看成是boolean注入的一个子分支。它与Boolean注入的不同之处在于，时间注入是利用sleep() 或benchmark（）等函数让MySQL的执行时间变长。也就是boolean是使用了选择语句，但是时间注入的选择语句中如果被执行，那么就会比平时花费更多的时间，所以也就是两种情况，一条注入语句的执行时间有没有边长。比如下面这条sql语句
+```sql
+IF (LENGTH)
 
 ```

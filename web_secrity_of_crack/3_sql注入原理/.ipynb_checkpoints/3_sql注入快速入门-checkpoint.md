@@ -58,6 +58,8 @@ union select 1,2,(select column_name from information_schema.columns where table
 ## 报错注入攻击
 当sql语句出现错误的时候，如果前端没有进行过滤，就会将报错信息显示出到前端来。所以报错注入的本质，就是从报错中获取信息。
 
+## 时间注入
+
 ```{.python .input}
 
 ```
