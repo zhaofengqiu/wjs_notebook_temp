@@ -9,3 +9,11 @@ SELECT SCHEMATA_NAME FROM information_ schema.SCHEMATA
 ```
 这条语句是获取数据库中创建的所有数据库
 2.  information_ schema.TABLES 
+存储着数据库中所有的数据表.其中有两个字段TABLE_NAME 是数据表的名字,TABLE_SCHEMATA是对应数据表的数据库的名字. 
+3. information_ schema.COLUMNS
+与之对应的就是对应数据表中有哪些字段
+
+
+```{.python .input}
+
+```
