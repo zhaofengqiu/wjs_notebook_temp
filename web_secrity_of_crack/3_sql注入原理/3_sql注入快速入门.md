@@ -69,15 +69,18 @@ union select 1,2,(select column_name from information_schema.columns where table
 ## 时间注入
 时间注入与boolean注入非常相近，也可以看成是boolean注入的一个子分支。它与Boolean注入的不同之处在于，时间注入是利用sleep() 或benchmark（）等函数让MySQL的执行时间变长。也就是boolean是使用了选择语句，但是时间注入的选择语句中如果被执行，那么就会比平时花费更多的时间，所以也就是两种情况，一条注入语句的执行时间有没有边长。比如下面这条sql语句
 1. 利用时间注入查询数据库长度
+
 ```sql
     IF(length(database())>1,sleep(5),1)
 ```
+
+
 语句的作用在于如果数据库库名的长度大于1 ，则MySQL查询休眠5秒，否则查询1。其中查询l的结果， 大约只有几十毫秒，根据Burp Suite中页面的响应时间，可以判 断条件是否正确。
 2. 利用时间注入查询数据库名字
+
 ```sql
 if(substr(database(),1,1)='s',sleep(5),1)
 ```
+
+
 查询当前用户数据库的第一个字母是不是‘s’，如果是s则会暂停5秒
-
-
-

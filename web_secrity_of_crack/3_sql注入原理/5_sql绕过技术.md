@@ -13,4 +13,13 @@
 <img src="../pictures/4y1vk21iflq.png" width="600" />
 
 ## 编码绕过注入
+后台服务器对URL进行一次url解码的时候，前台就会报错。所以前台输入的时候需要先对数据进行两次url编码，一次再浏览器的时候解码。另外一次是在服务器后台解码。
+<img src="../pictures/yo36naypl9o.png" width="600" />
 
+
+## 内联注入
+
+
+```{.python .input}
+
+```
