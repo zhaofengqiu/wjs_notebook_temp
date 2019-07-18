@@ -23,3 +23,10 @@ Metasploit特点由多个模块组成
 5. 渗透攻击。
 
 
+### Metasploit启动
+kail:msfconsole
+
+
+```{.python .input}
+
+```
