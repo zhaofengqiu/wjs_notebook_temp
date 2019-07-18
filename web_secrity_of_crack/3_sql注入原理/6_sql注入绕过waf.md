@@ -25,4 +25,14 @@ ununionion seselectlect 1,2,3,4,5
 使用注释替代空格
 <img src="../pictures/mudfgj5h6mr.png" width="600" />
 
+## 多参数请求拆分
+对于多个参数拼接到同一条SQU吾句中的情况，可以将注入语句分割插入。
+<img src="../pictures/du3njayefvg.png" width="600" />
+<img src="../pictures/urimemhlui9.png" width="600" />
 
+## 注入参数到 cookies中
+
+
+```{.python .input}
+
+```
