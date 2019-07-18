@@ -19,4 +19,12 @@
 
 ## 使用辅助模块进行服务扫描
 
+使用方法与使用辅助模块进行端口扫描一样,这里就介绍一下不同模块的用处就阔以了.
+<img src="../pictures/87ora9vuiag.png" width="600" />
 
+## 在Metasploit中使用 nmap 扫描
+<img src="../pictures/e6vozj1nf3w.png" width="600" />
+
+```{.python .input}
+
+```
