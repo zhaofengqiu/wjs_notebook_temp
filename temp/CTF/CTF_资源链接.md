@@ -33,7 +33,7 @@ Monyer's Little Game 梦之光芒的小游戏
 黑客丛林之旅http://www.fj543.com/hack/
 
 ## 在线靶机平台
-
+### 私人搭建靶机平台
 1. 在线DVWA平台:http://43.247.91.228:81/login.php  
 账号 admin
 密码 password
@@ -42,8 +42,11 @@ Monyer's Little Game 梦之光芒的小游戏
 
 3. SQL-LABS:http://43.247.91.228:84/
    sql注入
+   
+### 著名靶机平台
+1. HTB靶机平台
+2. WebGoat靶机平台
 
-qit
 
 ```{.python .input}
 
