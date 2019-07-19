@@ -1,2 +1,34 @@
+目标靶机IP:172.18.0.2 
+kali攻击方IP:172.18.0.1
 ## 后 渗 透 攻 击 : 信 息收集
 
+### 利用漏洞,开启shell
+
+1. 获取漏洞,根据前面的收集信息获取到目标信息,目标存在samba漏洞
+2. 设置参数
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/wm7s01e10fi.png" width="600px" />
+
+3. 运行获取shell
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/f5f8txqaxv.png" width="600px" />
+
+## 利用漏洞,开启meterpreter
+1. 设置木马
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/297xxu3448x.png" width="600px" />
+
+2. 修改木马权限,使其成为可执行程序
+```shell
+chmod +x wujiashuai
+```
+3. 运行木马程序
+```shell
+./wujiashuai
+```
+4. 开启meterpreter
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/r0nh84a0n3.png" width="600px" />
+5. 使用meterpreter命令
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/dqc71i0cipp.png" width="600px" />
+
+
+```{.python .input}
+
+```
