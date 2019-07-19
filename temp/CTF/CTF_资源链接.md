@@ -33,12 +33,17 @@ Monyer's Little Game 梦之光芒的小游戏
 黑客丛林之旅http://www.fj543.com/hack/
 
 ## 在线靶机平台
-sql注入平台 
+
 1. 在线DVWA平台:http://43.247.91.228:81/login.php  
 账号 admin
 密码 password
-2.OWASP Bricks: 
+2. OWASP Bricks: http://43.247.91.228:83/  
+如果不能正常使用进入http://43.247.91.228:83/config/ 然后reset
 
+3. SQL-LABS:http://43.247.91.228:84/
+   sql注入
+
+qit
 
 ```{.python .input}
 
