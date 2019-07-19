@@ -27,5 +27,10 @@ docker run -itd --name metasploitable2   --net mynetwork --ip 172.18.0.2 tleemcj
 此时容器状态为停止,只要docker start 容器名 即可启动容器
 
 ### 进入容器,查看ip
-![image.png](http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/bj00xnzgfzk.png)
-### 查看ip
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/bj00xnzgfzk.png" width="300px" />
+靶机已经搭建完成
+
+
+```{.python .input}
+
+```
