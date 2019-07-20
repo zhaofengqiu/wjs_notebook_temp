@@ -71,23 +71,17 @@ select password from tblUsers
 ```
 可以按照以下形式进行构造
 
-```{.python .input  n=4}
-for i in "select password from tblUsers":
-    print(int(ord(i),16),end="")
+```{.python .input  n=8}
+for i in "SELECT password FROM tblUsers":
+    print(int(str(ord(i))),end="")
 ```
 
-```{.json .output n=4}
+```{.json .output n=8}
 [
  {
-  "ename": "TypeError",
-  "evalue": "int() can't convert non-string with explicit base",
-  "output_type": "error",
-  "traceback": [
-   "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
-   "\u001b[0;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
-   "\u001b[0;32m<ipython-input-4-67fb0f585669>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;32mfor\u001b[0m \u001b[0mi\u001b[0m \u001b[0;32min\u001b[0m \u001b[0;34m\"select password from tblUsers\"\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m     \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mord\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mi\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;36m16\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0mend\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;34m\"\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
-   "\u001b[0;31mTypeError\u001b[0m: int() can't convert non-string with explicit base"
-  ]
+  "name": "stdout",
+  "output_type": "stream",
+  "text": "83697669678432112971151151191111141003270827977321169810885115101114115"
  }
 ]
 ```
