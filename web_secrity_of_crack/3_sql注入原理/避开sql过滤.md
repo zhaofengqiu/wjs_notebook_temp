@@ -69,7 +69,14 @@ Mysql : 'sel''ect' $\rightarrow$ 'select'
 ```sql
 select password from tblUsers
 ```
-可以按照以下形式进行构造
+SQL SERVER 也可以按照以下形式进行构造
+```
+DECLARE @query varchar(100);
+SELECT @query = 0x53454C454354202A2046524F4D2074626C7573657273
+exec(@query)
+```
+其中 0x53454C454354202A2046524F4D2074626C7573657273就是SELECT * FROM tblusers的16进制。
+
 
 ```{.python .input  n=8}
 for i in "SELECT password FROM tblUsers":
@@ -86,6 +93,5 @@ for i in "SELECT password FROM tblUsers":
 ]
 ```
 
-```{.python .input}
-
-```
+## 使用空字符
+由于过滤器一般都是cun
