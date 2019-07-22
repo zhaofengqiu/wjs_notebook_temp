@@ -2,6 +2,3 @@
 
 ## 通过e-mail重定向
 
-### sql server
-Database Mail服务（sql server 2005 以后的系列）
-
