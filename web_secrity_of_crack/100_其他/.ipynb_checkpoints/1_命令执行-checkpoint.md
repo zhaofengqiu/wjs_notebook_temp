@@ -6,8 +6,3 @@
 <img src="../pictures/l5pxywyf2k.png" width="600" />
 拼接参数
 <img src="../pictures/26zj45e4yuz.png" width="600" />
-
-
-```{.python .input}
-
-```
