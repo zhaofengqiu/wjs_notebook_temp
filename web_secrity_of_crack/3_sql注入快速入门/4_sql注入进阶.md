@@ -78,5 +78,3 @@ http报文除了url链接外还存在着cookie、XFF、post表单这些可能会
 ### XFF攻击
 header头部有一个X-Forwarded-for头部信息。而这个头部信息代表用户真实的ip地址。通过修改这个值可以伪造用户的客户端ip头部，毕竟我们需要知道，层与层之间是不能够进行通信的，否则就会违背TCP/IP协议的设计理念。查看是否有诸如点，就与cookie注入方式一样。
 <img src="../pictures/58fgz3ly0cr.png" width="600" />
-
-
