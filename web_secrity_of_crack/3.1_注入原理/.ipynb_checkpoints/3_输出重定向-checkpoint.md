@@ -2,3 +2,14 @@
 
 ## 通过e-mail重定向
 
+### sql server
+Database Mail服务（sql server 2005 以后的系列）
+sp_send_dbmail语法：
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/smdd0tzn9yj.png" width="600px" />
+例子：
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/27kkibnj51o.png" width="600px" />
+
+### oracel
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/kgj9ndwwr3.png" width="600px" />
+
+## 使用HTTP/DNS协议进行
