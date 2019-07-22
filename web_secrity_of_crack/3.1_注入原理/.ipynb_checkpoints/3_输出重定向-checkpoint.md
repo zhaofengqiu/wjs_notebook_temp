@@ -45,6 +45,21 @@ sp_send_dbmail语法：
 
 ## 在移动设备上实施SQL注入
 
+>机器上部署的数据库中才能运行SQL代码。但情况并非如此,大量移动手机和其他嵌入设备在后台都广泛使用了SL代码。这些SQL代码主要用于组织和管理小型数据存储,比如通讯录、书签、电子邮件或文本消息。即在移动设备上搭建小型数据库.  在绝大多数情况下使用的是 SQLite.
+
+如何在手机上寻找sql注入漏洞？
+1. 安装web服务
+安装 WebContentResolver[下载地址](http://labs.mwrinfosecurity.com/tools/android_webcontentresolver)
+2. 启动adb服务器，已经包含在android的sdk中
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/30eoji9p0ym.png" width="600px" />
+
+3. 映射端口  
+现在我们可以成功地与 Android设备进行通信了。请记住,如果你正在使用一个物理的Android设备,必须将 USB debugging设置为on才能正常通信。现在我们可以建立一个转接端口,用于从计算机的某个端口连接到 Android设备上 Web Contentresolver正在监听的端口(默认为8080端口):
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/zp5jw35jru.png" width="600px" />
+
+此时已经能够访问web页面了，然后就像普通注入那样即可。
+
+
 ```{.python .input}
 
 ```
