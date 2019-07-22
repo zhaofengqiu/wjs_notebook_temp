@@ -1,5 +1,12 @@
 >如果web页面做了默认页面的配置，或者做了限制对sql查询出来的结果。那解决方法很简单，只要不要将结果输出到web页面即可，我们可以将结果重定向到其他源。
 
+## 数据库远程登录
+针对sql server。使用openrowset从而实现该目的。使用openrowset并借助insert来向外部数据库传递数据。
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/o3b4w181bz.png" width="600px" />
+
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/stlovej6j3f.png" width="600px" />
+我们通过执行该查询来选取本地数据库中用户表的名字,并将这些行插入到位于攻击者服务器(P地址为1921680.1)上的 attacker table表中。当然,要保证该命令正确执行, attacker table表中的列必须与本地查询的结果相匹配,所以该表中包含了一个 varchar单列。
+
 ## 通过e-mail重定向
 
 ### sql server
@@ -58,3 +65,7 @@ sp_send_dbmail语法：
 <img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/zp5jw35jru.png" width="600px" />
 
 此时已经能够访问web页面了，然后就像普通注入那样即可。
+
+```{.python .input}
+
+```
