@@ -3,10 +3,13 @@
 ## 数据库远程登录
 针对sql server。使用openrowset从而实现该目的。使用openrowset并借助insert来向外部数据库传递数据。
 <img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/o3b4w181bz.png" width="600px" />
-
+sql语句如下所示
 <img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/stlovej6j3f.png" width="600px" />
-我们通过执行该查询来选取本地数据库中用户表的名字,并将这些行插入到位于攻击者服务器(P地址为1921680.1)上的 attacker table表中。当然,要保证该命令正确执行, attacker table表中的列必须与本地查询的结果相匹配,所以该表中包含了一个 varchar单列。
+我们通过执行该查询来选取本地数据库中用户表的名字,并将这些行插入到位于攻击者服务器(P地址为1921680.1)上的 attacker table表中。当然,要保证该命令正确执行, attacker table表中的列必须与本地查询的结果相匹配,所以该表中包含了一个 varchar单列。 
 
+当然也不单单可以获取数据库中的数据，还能获取数据库所在的系统的数据
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/amfb2zr3fzt.png" width="600px" />
+这条sql语句的含义在于将使目标数据库发送C:路径下的文件和目录列表。
 ## 通过e-mail重定向
 
 ### sql server
@@ -19,18 +22,39 @@ sp_send_dbmail语法：
 ### oracel
 <img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/kgj9ndwwr3.png" width="600px" />
 
-## 通过HTTP/DNS协议进行重定向
+## 通过HTTP协议进行重定向
+>1. SQL Server和 MySQL都没有包含构造HTP请求的默认机制,不过可以使用自定义扩展获取到  
+2. PostgreSQL也没有调用HTTP请求的原生方法,但是如果在生成build)时启用了某种外部语言比如Perl或Python,那么开发人员可以编写PostgreSQL函数,将外部语言的HTTP库封装在其中;
+3. Oracle包含一个明确的函数和一种对象类型,可使用它们来构造HTTP请求,它们由 Utl Http或 HttpuriType包提供。该函数和对象类型可用在常规SQL查询中,因而它
+
 ### Oracle
-1. http协议
-    + 要想向远程系统发送SYS用户的哈希口令,可注入下列字符串:
-    <img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/2dhgbab3j4i.png" width="600px" />
-    + 借助HTTPURL_TYPE对象
-    <img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/0n5w3r5w4vjq.png" width="600px" />
 
-2. DNS协议
-<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/6gu41zu00d4.png" width="600px" />
++ 要想向远程系统发送SYS用户的哈希口令,可注入下列字符串:
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/2dhgbab3j4i.png" width="600px" />
++ 借助HTTPURL_TYPE对象
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/0n5w3r5w4vjq.png" width="600px" />
+
+可以将该方法与SQL盲注漏洞相结合以形成一个漏洞利用,该利用使用字符串连接来将我们想要提取的数据与发送给由我们控制的Web服务器的请求结合起来.
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/v0ur1hwnau.png" width="600px" />
 
 
+## DNS协议
+使用DNS通道的优点：
+
+1. 网络只有入口过滤而没有出口过滤时,或者仅有TCP出口过滤时,数据库可直接向攻击者发送DNS请求  
+2. DNS使用的是UDP( User Datagram Protocol,用户数据报协议,一种无状态需求协议),可以“发完后不管”。如果未收到数据库发送的査找请求的响应,那么至多产生一个非致命错误条件。  
+3. DNS的层级设计意味着易受攻击的数据库不必直接向攻击者发送包。中间的DNS服务器一般就能在数据库的支持下传输流量。  
+4. 执行査找时,数据库默认情况下会依赖于配置在操作系统内部的DNS服务器,该操作系统通常是基本系统安装的关键部分。因此,除被严格限制的网络外,数据库可以在大多数网络中发起受害者网络中存在的DNS查找。
+
+1. Oracle
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/h2maduar39f.png" width="600px" />
+
+2. PostgreSQL
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/kqi74697kjd.png" width="600px" />
+
+3. sql server
+借用nslookup
+z
 
 ## 使用web应用进行重定向
 如果攻击者拥有足够的写文件系统的权限,那么他就可以，将查询结果重定向到Web服务器根目录下的一个文件中,之后他便可以使用浏览器来正常访问该文件。而这个文件中已经一次性包含了很多sql查询的结果。
@@ -49,6 +73,9 @@ sp_send_dbmail语法：
 <img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/gin5cq5xpua.png" width="600px" />
 2. 使用OUTFILE重定向
 <img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/4ta4aaepbi5.png" width="600px" />
+
+## ICMP报文通道
+DNS可以在通道中传递数据,但防御者常常忽视它。与之类似,防御者常常忽视ICMP,但ICMP也是非常有用的。在过去,允许ICMP通过网络并且对ICMP的过滤极少,这是很常见的情况。这使得ICMP成为隧道( tunne)机制的理想选择。但是最近几年,不断增强的网络控制已经减少了ICMP的使用价值。此外,数据库也没有提供能直接或间接地构造ICMP报文( package)的底层接口,因为ICMP通道失去了魅力。只有很少的SQL注入攻击支持ICMP通道,并且它们依赖于另外一个辅助应用程序来执行ICMP报文的构造工作。
 
 ## 在移动设备上实施SQL注入
 
