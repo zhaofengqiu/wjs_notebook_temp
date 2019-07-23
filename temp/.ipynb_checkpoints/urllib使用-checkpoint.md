@@ -151,6 +151,43 @@ print(type(response))
 response.read()获得的是响应体的内容
 
 
+## URL解析
+### urlparse
+将urlstr解析成各个组件
+
+```python
+# -*- coding:utf-8 -*-
+import urllib.request
+import urllib.parse
+url = "http://www.baidu.com"
+parsed = urllib.parse.urlparse(url)
+print(parsed)
+#输出：ParseResult(scheme='http', netloc='www.baidu.com', path='', params='', query='', fragment='')
+```
+### urlunpars
+其实功能和urlparse的功能相反，它是用于拼接，例子如下：
+```python
+from urllib.parse import urlunparse
+data = ['http','www.baidu.com','index.html','user','a=123','commit']
+print(urlunparse(data))
+```
+
+### urlencode
+这个方法可以将字典转换为url参数
+```python
+from urllib.parse import urlencode
+
+params = {
+    "name":"zhaofan",
+    "age":23,
+}
+base_url = "http://www.baidu.com?"
+
+url = base_url+urlencode(params)
+print(url)
+```
+
+
 ```{.python .input}
 
 ```
