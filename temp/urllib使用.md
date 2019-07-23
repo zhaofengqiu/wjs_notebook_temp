@@ -151,6 +151,10 @@ print(type(response))
 response.read()获得的是响应体的内容
 
 
+## URL解析
+### urlparse
+
+
 ```{.python .input}
 
 ```
