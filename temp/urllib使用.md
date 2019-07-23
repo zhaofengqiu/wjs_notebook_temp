@@ -48,7 +48,97 @@ except urllib.error.URLError as e:
 
 ## request进阶请求
 ### 添加headers
+#### 第一种方式
+```PYTHON
+from urllib import request, parse
 
+url = 'http://httpbin.org/post'
+headers = {
+    'User-Agent': 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)',
+    'Host': 'httpbin.org'
+}
+dict = {
+    'name': 'zhaofan'
+}
+data = bytes(parse.urlencode(dict), encoding='utf8')
+req = request.Request(url=url, data=data, headers=headers, method='POST')
+response = request.urlopen(req)
+print(response.read().decode('utf-8'))
+```
+
+#### 第二种方式
+```python
+from urllib import request, parse
+
+url = 'http://httpbin.org/post'
+dict = {
+    'name': 'Germey'
+}
+data = bytes(parse.urlencode(dict), encoding='utf8')
+req = request.Request(url=url, data=data, method='POST')
+req.add_header('User-Agent', 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)')
+response = request.urlopen(req)
+print(response.read().decode('utf-8'))
+```
+
+### 添加代理
+```python
+import urllib.request
+
+proxy_handler = urllib.request.ProxyHandler({
+    'http': 'http://127.0.0.1:9743',
+    'https': 'https://127.0.0.1:9743'
+})
+opener = urllib.request.build_opener(proxy_handler)
+response = opener.open('http://httpbin.org/get')
+print(response.read())
+```
+
+
+### 添加cookies
+cookie中保存中我们常见的登录信息，有时候爬取网站需要携带cookie信息访问,这里用到了http.cookijar，用于获取cookie以及存储cookie
+```python
+import http.cookiejar, urllib.request
+cookie = http.cookiejar.CookieJar()
+handler = urllib.request.HTTPCookieProcessor(cookie)
+opener = urllib.request.build_opener(handler)
+response = opener.open('http://www.baidu.com')
+for item in cookie:
+    print(item.name+"="+item.value)
+```
+#### 将cookie写入文件
+1. http.cookiejar.MozillaCookieJar()方式
+```python
+import http.cookiejar, urllib.request
+filename = "cookie.txt"
+cookie = http.cookiejar.MozillaCookieJar(filename)
+handler = urllib.request.HTTPCookieProcessor(cookie)
+opener = urllib.request.build_opener(handler)
+response = opener.open('http://www.baidu.com')
+cookie.save(ignore_discard=True, ignore_expires=True)
+```
+
+2. http.cookiejar.LWPCookieJar()方式
+```python
+import http.cookiejar, urllib.request
+filename = 'cookie.txt'
+cookie = http.cookiejar.LWPCookieJar(filename)
+handler = urllib.request.HTTPCookieProcessor(cookie)
+opener = urllib.request.build_opener(handler)
+response = opener.open('http://www.baidu.com')
+cookie.save(ignore_discard=True, ignore_expires=True)
+```
+#### 加载文件中的cookie
+同样的如果想要通过获取文件中的cookie获取的话可以通过load方式，当然用哪种方式写入的，就用哪种方式读取。
+```python
+import http.cookiejar, urllib.request
+cookie = http.cookiejar.LWPCookieJar()
+cookie.load('cookie.txt', ignore_discard=True, ignore_expires=True)
+handler = urllib.request.HTTPCookieProcessor(cookie)
+opener = urllib.request.build_opener(handler)
+response = opener.open('http://www.baidu.com')
+print(response.read().decode('utf-8'))
+```
 
 ## 响应
 响应类型、状态码、响应头
