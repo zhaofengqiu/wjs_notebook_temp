@@ -16,6 +16,7 @@
     + [白帽学院]( http://www.baimaoxueyuan.com/ )
     + [在线联系和ctf挑战赛](https://ctf.bugku.com/)
     + [黑吧安全网](http://www.myhack58.com/)
+3.[CTF导航](https://ctf.gs/)
           
 ## 在线工具类 待补充  
 1. [密码:786SnN](https://www.fageka.com/Home/Index/tiqu.html?id=H20190713102948lXAqF51670)
@@ -55,3 +56,8 @@ Monyer's Little Game 梦之光芒的小游戏
 3. [实验吧](http://www.shiyanbar.com)
 4. [网络信息安全攻防学习平台](http://hackinglab.cn/index.php)
 5. [白帽学院]( http://www.baimaoxueyuan.com/ )
+6. [南邮](https://cgctf.nuptsast.com/login)
+
+```{.python .input}
+
+```
