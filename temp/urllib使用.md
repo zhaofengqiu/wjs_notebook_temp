@@ -6,13 +6,16 @@
 
 ## request普通请求
 ### GET请求
+
 ```python
 import urllib.request
 response = urllib.request.urlopen('http://www.baidu.com')
 print(response.read().decode('utf-8'))
 ```
 
+
 ### POST请求
+
 ```python
 import urllib.parse
 import urllib.request
@@ -21,8 +24,10 @@ response = urllib.request.urlopen('http://httpbin.org/post', data=data)
 print(response.read())
 ```
 
+
 ### timeout参数
 请求设置一个超时时间，如果超过这个世间，那么将会报错
+
 ```PYTHON
 import urllib.request
 
@@ -31,7 +36,9 @@ print(response.read())
 
 ```
 
+
 ### 对异常进行捕获
+
 ```PYTHON
 import socket
 import urllib.request
@@ -45,10 +52,10 @@ except urllib.error.URLError as e:
 ```
 
 
-
 ## request进阶请求
 ### 添加headers
 #### 第一种方式
+
 ```PYTHON
 from urllib import request, parse
 
@@ -66,7 +73,9 @@ response = request.urlopen(req)
 print(response.read().decode('utf-8'))
 ```
 
+
 #### 第二种方式
+
 ```python
 from urllib import request, parse
 
@@ -81,7 +90,9 @@ response = request.urlopen(req)
 print(response.read().decode('utf-8'))
 ```
 
+
 ### 添加代理
+
 ```python
 import urllib.request
 
@@ -97,6 +108,7 @@ print(response.read())
 
 ### 添加cookies
 cookie中保存中我们常见的登录信息，有时候爬取网站需要携带cookie信息访问,这里用到了http.cookijar，用于获取cookie以及存储cookie
+
 ```python
 import http.cookiejar, urllib.request
 cookie = http.cookiejar.CookieJar()
@@ -106,8 +118,11 @@ response = opener.open('http://www.baidu.com')
 for item in cookie:
     print(item.name+"="+item.value)
 ```
+
+
 #### 将cookie写入文件
 1. http.cookiejar.MozillaCookieJar()方式
+
 ```python
 import http.cookiejar, urllib.request
 filename = "cookie.txt"
@@ -118,7 +133,9 @@ response = opener.open('http://www.baidu.com')
 cookie.save(ignore_discard=True, ignore_expires=True)
 ```
 
+
 2. http.cookiejar.LWPCookieJar()方式
+
 ```python
 import http.cookiejar, urllib.request
 filename = 'cookie.txt'
@@ -128,8 +145,11 @@ opener = urllib.request.build_opener(handler)
 response = opener.open('http://www.baidu.com')
 cookie.save(ignore_discard=True, ignore_expires=True)
 ```
+
+
 #### 加载文件中的cookie
 同样的如果想要通过获取文件中的cookie获取的话可以通过load方式，当然用哪种方式写入的，就用哪种方式读取。
+
 ```python
 import http.cookiejar, urllib.request
 cookie = http.cookiejar.LWPCookieJar()
@@ -140,13 +160,17 @@ response = opener.open('http://www.baidu.com')
 print(response.read().decode('utf-8'))
 ```
 
+
 ## 响应
 响应类型、状态码、响应头
+
 ```python
 import urllib.request
 response = urllib.request.urlopen('https://www.python.org')
 print(type(response))
 ```
+
+
 我们可以通过response.status、response.getheaders().response.getheader("server")，获取状态码以及头部信息
 response.read()获得的是响应体的内容
 
@@ -164,16 +188,21 @@ parsed = urllib.parse.urlparse(url)
 print(parsed)
 #输出：ParseResult(scheme='http', netloc='www.baidu.com', path='', params='', query='', fragment='')
 ```
+
+
 ### urlunpars
 其实功能和urlparse的功能相反，它是用于拼接，例子如下：
+
 ```python
 from urllib.parse import urlunparse
 data = ['http','www.baidu.com','index.html','user','a=123','commit']
 print(urlunparse(data))
 ```
 
+
 ### urlencode
 这个方法可以将字典转换为url参数
+
 ```python
 from urllib.parse import urlencode
 
@@ -210,6 +239,3 @@ str3 = parse.unquote(str2)  #解码字符串
 print(str3)                 #str3=haha哈哈
 ```
 
-```{.python .input}
-
-```
