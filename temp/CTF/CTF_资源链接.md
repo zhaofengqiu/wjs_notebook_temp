@@ -55,7 +55,3 @@ Monyer's Little Game 梦之光芒的小游戏
 3. [实验吧](http://www.shiyanbar.com)
 4. [网络信息安全攻防学习平台](http://hackinglab.cn/index.php)
 5. [白帽学院]( http://www.baimaoxueyuan.com/ )
-
-```{.python .input}
-
-```
