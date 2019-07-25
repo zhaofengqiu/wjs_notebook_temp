@@ -1,0 +1,126 @@
+## 枚举数据库
+之前通过union可以获取到数据库中的数据，但是太慢了。这里讲述的是，如何快速获取大量数据
+
+### sql server
+1. 获取所有的数据库列表
+
+```sql
+SELECT name FROM master..sysdatabases;
+```
+
+
+2. 获取数据库中所有的表  
+数据库都有一张名为 sysobjects的表,其中刚好包含了我们想要的信息。
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/bizggt6edrj.png" width="600px" />
+
+3. 枚举每张表的字段
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/rpfetronwo.png" width="600px" />
+
+### Mysql
+
+1. 查询用户名
+
+```sql
+SELECT user();
+SELECT current_user;
+```
+
+
+2. 查询有哪些数据库
+
+```sql
+SELECT schem FROM information_schema.schemate;
+```
+
+
+3. 查询有哪些数据表
+
+```sql
+SELECT table_schema,table_name FROM information_schema.tables;
+```
+
+
+4. 查询表中的字段
+
+```sql
+SELECT table_schema,table_name，column_name FROM information_schema.columns;
+```
+
+
+5. 查询用户权限
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/32qemtv8bvt.png" width="600px" />
+结果如下
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/t6l0qk1x7oc.png" width="600px" />
+
+
+### PostgreSQL
+1. 列出所有数据库
+
+```sql
+SELECT datname FROM pg_database;
+```
+
+
+3. 查询当前数据库
+
+```sql
+SELECT current_database();
+```
+
+
+4. 获取当前用户
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/a5vac2o7l39.png" width="600px" />
+
+5. 获取连接数据库的所有表
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/3dpfzw77o9p.png" width="600px" />
+
+### Oracel
+
+1. 获取当前用户的表
+
+```SQL
+select table_name from user_tables;
+```
+
+
+2. 获取数据库中所有表以及其所有者
+
+```SQL
+select owner,table_name from all_tables;
+```
+
+
+3. 枚举更多关于应用表的信息以确定表中出现的列数和行数
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/no1ywky8ruj.png" width="600px" />
+
+4. 可以为所有可访问或可用的表枚举相同的信息
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/ssf3nbwsta.png" width="600px" />
+
+5. 枚举每张表的列和数据类型
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/5y22p7jlhw6.png" width="600px" />
+
+6. 获取权限信息
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/w261ril1he9.png" width="600px" />
+
+## 在INSERT查询中实施注入攻击
+### 第一种情形:插入用户规定的数据
+#### 注入点不是最后一个参数
+将用户查询到的数据，插入到数据库中。其实这一点指的就是响应重定向。即我们应该将响返回到web的response。但是由于只有插入语句，所以我们只能将我们查询到的结果重定向到数据库中。
+原来
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/dj9ngd1bh8g.png" width="600px" />
+插入语句
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/7ze2ju8dlam.png" width="600px" />
+结果，下面查询到的数据被插入数据库中了
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/asfjpvh5o87.png" width="600px" />
+或者使用contact内置函数
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/0ommqsh4tlh.png" width="600px" />
+
+#### 注入点是最后一个参数
+原来
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/cyp935cftn.png" width="600px" />
+注入
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/gmnl3c78pb8.png" width="600px" />
+
+### 第二种情形：生成INSERT错误
+在insert语句中嵌套两个查询，即子查询中嵌套子查询。这样子内部查询执行成功，外部查询执行不成功。这样子最外层的INSERT插入语句也是不会执行成功的。
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/rta36ci7nn.png" width="600px" />
