@@ -22,7 +22,7 @@ return preg_match("/select|update|delete|drop|insert|where|\./i",$inject);
 
 
 ## 绕过过滤
-### 测试能否进行迭代查询
+### 测试能否进行堆叠查询
 <img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/y4ld12thvpk.png" width="600px" />
 可以进行迭代查询
 
@@ -32,9 +32,16 @@ return preg_match("/select|update|delete|drop|insert|where|\./i",$inject);
 + 使用concat拆分select；
 + 使用存储过程执行字符串；
 
-#### 查询当前是属于哪个数据库
-' and extractvalue("-",concat("~","version()"));#
+#### 查询当前数据库版本
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/k5obgvs03oh.png" width="600px" />
 
+#### 查询当前是属于哪个数据库
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/tos36bp1iro.png" width="600px" />
+
+#### 使用堆叠查询
+```sql
+
+```
 #### 使用报错注入获取数据库的名称
 
 
