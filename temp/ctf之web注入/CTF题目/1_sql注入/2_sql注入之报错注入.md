@@ -27,4 +27,10 @@ return preg_match("/select|update|delete|drop|insert|where|\./i",$inject);
 可以进行迭代查询
 
 ### 使用extractvalue函数绕过过滤
+绕过注入的前提是使用
+#### 使用报错注入获取数据库的名称
 
+
+```{.python .input}
+
+```
