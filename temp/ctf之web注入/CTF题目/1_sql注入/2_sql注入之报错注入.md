@@ -28,17 +28,13 @@ return preg_match("/select|update|delete|drop|insert|where|\./i",$inject);
 
 ### 使用extractvalue函数绕过过滤
 这里如果一定要使用select，那么就需要在前台将select拆成两部分，在后台合并然后执行该字符串。
-整个过程可以表述两种方法：
-1. 第一种方法
-    + 使用concat拆分select；
-    + 使用extractvalue来进行执行字符串
+整个过程可以表述为：
++ 使用concat拆分select；
++ 使用存储过程执行字符串；
 
-2. 第二种方法
-    + 使用concat拆分select；
-    + 使用存储过程执行字符串；
+#### 查询当前是属于哪个数据库
+' and extractvalue("-",concat("~","version()"));#
 
-两种方法之间的区别是，前可以通过内联sql注入拼接成一条sql注入语句。第二种方法，则一定需要执行多条sql语句。
-### 
 #### 使用报错注入获取数据库的名称
 
 
