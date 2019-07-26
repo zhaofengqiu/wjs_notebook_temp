@@ -68,7 +68,7 @@ describe table_name
 使用updatexml与extractvalue进行注入
 updatexml与extractvalue是什么？可以看[这篇文章](https://www.cnblogs.com/laoxiajiadeyun/p/10488731.html).  
 简单来说，就是在执行函数的时候，会自动去执行参数字符串。如果字符串参数的内容不符合xpath语法，那么就会报错。
-[例题](/notebooks/temp/ctf之web注入/CTF题目/1_sql注入/2_sql注入之报错注入.md)
+[例题](../CTF题目/2_sql注入之报错注入.md)
 
 
 ## boolean注入
