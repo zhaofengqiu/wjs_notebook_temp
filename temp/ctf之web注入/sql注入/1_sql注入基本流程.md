@@ -63,6 +63,9 @@ describe table_name
 
 ## 报错注入攻击
 当sql语句出现错误的时候，如果前端没有进行过滤，就会将报错信息显示出到前端来。所以报错注入的本质，就是从报错中获取信息。
+使用updatexml与extractvalue进行注入
+updatexml与extractvalue是什么？可以看[这篇文章](https://www.cnblogs.com/laoxiajiadeyun/p/10488731.html).
+
 
 ## boolean注入
 
