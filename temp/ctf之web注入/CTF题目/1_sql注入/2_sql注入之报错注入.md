@@ -23,3 +23,8 @@ return preg_match("/select|update|delete|drop|insert|where|\./i",$inject);
 
 ## 绕过过滤
 ### 测试能否进行迭代查询
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/y4ld12thvpk.png" width="600px" />
+可以进行迭代查询
+
+### 使用extractvalue函数绕过过滤
+
