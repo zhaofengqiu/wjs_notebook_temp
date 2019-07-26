@@ -1,4 +1,5 @@
 题目来源实验吧:[http://www.shiyanbar.com/ctf/1909](http://www.shiyanbar.com/ctf/1909)
+
 ```python
 import requests
 from urllib import parse
@@ -92,9 +93,7 @@ for index in range(1,100):
 table_list = tables.split(',')
 print('表的名称',table_list)
 ```
+
+
 运行结果:
 <img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/ekberozy0je.png" width="600px" />
-
-```{.python .input}
-
-```
