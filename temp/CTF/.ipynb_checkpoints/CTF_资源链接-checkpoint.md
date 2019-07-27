@@ -17,7 +17,37 @@
     + [在线联系和ctf挑战赛](https://ctf.bugku.com/)
     + [黑吧安全网](http://www.myhack58.com/)
 3.[CTF导航](https://ctf.gs/)
-          
+
+### 综合学习平台  
+http://edu.gooann.com/ 谷安网校  
+http://www.jikexueyuan.com/ 极客学院  
+http://www.hetianlab.com/ 合天  
+http://www.moonsos.com/ 米安网   
+http://www.ichunqiu.com/ i 春秋  
+http://www.honyaedu.com/ -红亚  
+http://www.baimaoxueyuan.com/ 白帽学院  
+http://www.simplexue.com/ctf/index 西普学院  
+http://www.imooc.com/course/list 慕课  
+http://www.secbox.cn/ 安全盒子  
+http://www.freebuf.com/ freebuf  
+http://bobao.360.cn/ 360安全播报  
+http://www.wooyun.org/ 乌云  
+http://drops.wooyun.org/ 乌云知识库   
+http://wiki.wooyun.org/ WooYun WiKi  
+https://www.91ri.org/ 91ri  
+https://www.t00ls.net/tools  
+http://www.ijiandao.com/ 爱尖刀  
+http://www.secwk.com/article/index.html 威客众测   
+http://bluereader.org/ 深蓝阅读  
+http://www.shentou.org/ 黑客安全军火库  
+http://netsecurity.51cto.com/ 51cto  
+http://security.csdn.net/ csdn  
+http://www.80sec.com/ 80sec team  
+https://security.alibaba.com/blog.htm?spm=0.0.0.0.knOqaI 阿里巴巴安全响应中心  
+http://security.tencent.com/index.php/blog 腾讯安全应急响应中心 博客  
+http://security.360.cn/blog 360安全应急响应中心 博客  
+http://sec.baidu.com/index.php?research/list 百度安全应急响应中心 博客  
+
 ## 在线工具类 待补充  
 1. [密码:786SnN](https://www.fageka.com/Home/Index/tiqu.html?id=H20190713102948lXAqF51670)
 
@@ -57,6 +87,66 @@ Monyer's Little Game 梦之光芒的小游戏
 4. [网络信息安全攻防学习平台](http://hackinglab.cn/index.php)
 5. [白帽学院]( http://www.baimaoxueyuan.com/ )
 6. [南邮](https://cgctf.nuptsast.com/login)
+
+## 博客推荐
+http://security.tencent.com/index.php/blog  
+http://217.logdown.com/ 217  
+http://www.blue-lotus.net blue-lotus 蓝莲花  
+http://blog.0ops.net/ 0ops  
+http://le4f.net/  e4f   
+http://www.programlife.net/ 代码疯子  
+http://www.hackdog.me/ redrain'blog  
+http://www.syjzwjj.com/  俊杰  
+http://syclover.sinaapp.com/ 三叶草安全小组  
+http://appleu0.sinaapp.com/ appleU0大大  
+http://bl4ck.in/ tomato表哥  
+http://www.sco4x0.com/ 4叔叔  
+http://laterain.sinaapp.com/ 白神   
+http://0nly3nd.sinaapp.com/ 0nly3nd  
+http://hijacks.in/ LateRain'blog  
+http://www.waitalone.cn/  独自等待  
+http://evilcos.me/ 余弦  
+http://www.moonsec.com/ 暗月   
+http://www.cnblogs.com/xuanhun/ 玄魂  
+https://www.leavesongs.com/ 离别歌  
+http://huaidan.org/ 鬼仔  
+http://www.03sec.com/ sky的自留地  
+http://joychou.org/ jc老师  
+http://www.unhonker.com/ 90's blog  
+http://www1.taosay.net/ 道哥的黑板报  
+http://blog.knownsec.com/ 知道创于  
+http://www.sadk.org/ 焠安  
+http://www.cnseay.com/ seay'blog  
+http://blog.aptsec.net/ AptSec Team  
+http://lcx.cc/ 网络安全研究中心  
+http://www.kali.org.cn/ kali中文网  
+http://xiao106347.blog.163.com/ xiao106347 kali折腾  
+
+## 渗透:
+http://www.wooyun.org/ 乌云  
+http://bbs.blackbap.org/ 习科  
+http://www.1937cn.net/ 1937  
+http://forum.cnsec.org/ 暗组  
+http://www.k33nteam.org/ keen team  
+http://forum.eviloctal.com/ 邪恶八进制  
+http://www.evil0x.com/ 邪恶十六进制  
+http://www.myhack58.com/ 黑吧安全吧  
+http://www.cnhonkerarmy.com/ 中国红客 红盟  
+http://www.chinahacker.com/ 中国黑客联盟  
+http://www.hxhack.com/ 华夏黑客联盟  
+http://www.heikexiehui.com/ 中国黑客协会官网  
+http://www.hackbase.com/ 黑基  
+http://www.2cto.com/ 红黑联盟   
+http://bbs.2cto.com/ 红黑联盟论坛  
+http://www.hackwd.com/   
+http://www.heishou.com.cn/ 黑手安全网  
+https://www.sitedirsec.com/ 非安全中国网  
+http://www.zatokasztuki.com/ 学生技术联盟   
+
+## 逆向
+http://www.52pojie.cn/ 吾爱破解   
+http://bbs.pediy.com/ 看雪论坛  
+
 
 ```{.python .input}
 
