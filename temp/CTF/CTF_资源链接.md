@@ -147,7 +147,3 @@ http://www.zatokasztuki.com/ 学生技术联盟
 ## 逆向
 http://www.52pojie.cn/ 吾爱破解   
 http://bbs.pediy.com/ 看雪论坛
-
-```{.python .input}
-
-```
