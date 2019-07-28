@@ -87,6 +87,7 @@ Monyer's Little Game 梦之光芒的小游戏
 4. [网络信息安全攻防学习平台](http://hackinglab.cn/index.php)
 5. [白帽学院]( http://www.baimaoxueyuan.com/ )
 6. [南邮](https://cgctf.nuptsast.com/login)
+7. [bugku](https://ctf.bugku.com/)
 
 ## 博客推荐
 http://security.tencent.com/index.php/blog  
@@ -145,8 +146,7 @@ http://www.zatokasztuki.com/ 学生技术联盟
 
 ## 逆向
 http://www.52pojie.cn/ 吾爱破解   
-http://bbs.pediy.com/ 看雪论坛  
-
+http://bbs.pediy.com/ 看雪论坛
 
 ```{.python .input}
 
