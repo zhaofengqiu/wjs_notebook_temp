@@ -7,10 +7,23 @@
 
 ## 安装apache2
 ```shell
- yum info httpd
- yum -y install httpd 
-  yum -y install apache2
+yum install httpd -y
+```  
+启动httpd服务 
+```shell
+systemctl start httpd
 ```
+查看httpd服务状态  
+
+<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/vxa0gfyatq.png" width="600px" />  
+
+让httpd服务开机启动
+```shell
+systemctl enable httpd
+```
+
+## 安装mysql服务
+
 
 ```{.python .input}
 
