@@ -72,18 +72,63 @@ mysql57-community/x86_64          MySQL 5.7 Community Server                364
 ```
 有点大,所以安装时间有点长.需要耐性等待
 5. 启动mysqld服务
-```
-
+```shell
+[root@eed91f779df8 mysql]# systemctl start mysqld
 ```
 第一次启动时间可能比较长，一定要耐心等待。
 6. 检查mysqld服务是否启动
-```
+```shell
+[root@eed91f779df8 mysql]# systemctl status mysqld
+● mysqld.service - MySQL Server
+   Loaded: loaded (/usr/lib/systemd/system/mysqld.service; enabled; vendor preset: disabled)
+   Active: active (running) since Mon 2019-07-29 02:39:03 UTC; 6s ago
+     Docs: man:mysqld(8)
+           http://dev.mysql.com/doc/refman/en/using-systemd.html
+  Process: 4093 ExecStart=/usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/mysqld.pid $MYSQLD_OPTS (code=exited, status=0/SUCCESS)
+  Process: 4022 ExecStartPre=/usr/bin/mysqld_pre_systemd (code=exited, status=0/SUCCESS)
+ Main PID: 4095 (mysqld)
+   CGroup: /docker/eed91f779df83efe665fd529a0a51921e4ad943f340d202ff6e1a969bd8d3f56/docker/eed91f779df83efe665fd529a0a51921e4ad943f340d202ff6e1a969bd8d3f56/system.slice/mysqld.service
+           └─4095 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/my...
+           ‣ 4095 /usr/sbin/mysqld --daemonize --pid-file=/var/run/mysqld/my...
+Jul 29 02:38:37 eed91f779df8 systemd[1]: Starting MySQL Server...
+Jul 29 02:39:03 eed91f779df8 systemd[1]: Started MySQL Server.
 ```
 7. mysqld开机启动
-
+```
+[root@eed91f779df8 mysql]# systemctl enable mysqld
+```
 8. 修改root本地登录密码  
 mysql安装完成之后，在/var/log/mysqld.log文件中给root生成了一个默认密码。通过下面的方式找到root默认密码，然后登录mysql进行修改：
+查看密码  
+```shell
+[root@eed91f779df8 mysql]# grep 'temporary password' /var/log/mysqld.log
+2019-07-29T02:38:39.780084Z 1 [Note] A temporary password is generated for root@localhost: /Yn4#pui?uwy
+```
 
+
+
+修改密码
+```
+[root@eed91f779df8 mysql]# mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2
+Server version: 5.7.27
+
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> ALTER USER root@localhost IDENTIFIED BY 'Sqlwjs123.';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> 
+
+```
 
 **注意：mysql5.7默认安装了密码安全检查插件（validate_password），默认密码检查策略要求密码必须包含：大小写字母、数字和特殊符号，并且长度不能少于8位。否则会提示ERROR 1819 (HY000): Your password does not satisfy the current policy requirements错误.**
 
