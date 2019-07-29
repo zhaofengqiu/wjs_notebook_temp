@@ -132,6 +132,18 @@ mysql>
 
 **注意：mysql5.7默认安装了密码安全检查插件（validate_password），默认密码检查策略要求密码必须包含：大小写字母、数字和特殊符号，并且长度不能少于8位。否则会提示ERROR 1819 (HY000): Your password does not satisfy the current policy requirements错误.**
 
+## 安装PHP
+添加 Webtatic 仓库php7-fpm 依赖需要
+```
+[root@eed91f779df8 mysql]# rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+```
+
+安装 PHP7-FPM
+```
+[root@eed91f779df8 mysql]# yum -y install php70w-fpm php70w-cli php70w-gd php70w-mcrypt php70w-mysql php70w-pear php70w-xml php70w-mbstring php70w-pdo php70w-json php70w-pecl-apcu php70w-pecl-apcu-devel
+
+```
+
 ```{.python .input}
 
 ```

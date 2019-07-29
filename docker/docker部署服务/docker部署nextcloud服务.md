@@ -143,3 +143,7 @@ mysql>
 [root@eed91f779df8 mysql]# yum -y install php70w-fpm php70w-cli php70w-gd php70w-mcrypt php70w-mysql php70w-pear php70w-xml php70w-mbstring php70w-pdo php70w-json php70w-pecl-apcu php70w-pecl-apcu-devel
 
 ```
+
+```{.python .input}
+
+```
