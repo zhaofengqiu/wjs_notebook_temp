@@ -144,6 +144,17 @@ mysql>
 
 ```
 
+## nextcloud下载
+1. 安装解压工具
+```
+yum install unzip
+```
+
+2. 下载Nextcloud
+```
+wget -P /tmp https://download.nextcloud.com/server/releases/nextcloud-15.0.0.zip
+```
+
 ```{.python .input}
 
 ```
