@@ -66,10 +66,26 @@ mysql-connectors-community/x86_64 MySQL Connectors Community                118
 mysql-tools-community/x86_64      MySQL Tools Community                      95
 mysql57-community/x86_64          MySQL 5.7 Community Server                364
 ```
-4. 安装
+4. 安装mysql-community-server
 ```
 [root@eed91f779df8 mysql]# yum install mysql-community-server
 ```
+有点大,所以安装时间有点长.需要耐性等待
+5. 启动mysqld服务
+```
+
+```
+第一次启动时间可能比较长，一定要耐心等待。
+6. 检查mysqld服务是否启动
+```
+```
+7. mysqld开机启动
+
+8. 修改root本地登录密码  
+mysql安装完成之后，在/var/log/mysqld.log文件中给root生成了一个默认密码。通过下面的方式找到root默认密码，然后登录mysql进行修改：
+
+
+**注意：mysql5.7默认安装了密码安全检查插件（validate_password），默认密码检查策略要求密码必须包含：大小写字母、数字和特殊符号，并且长度不能少于8位。否则会提示ERROR 1819 (HY000): Your password does not satisfy the current policy requirements错误.**
 
 ```{.python .input}
 
