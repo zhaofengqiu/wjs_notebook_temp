@@ -147,3 +147,15 @@ http://www.zatokasztuki.com/ 学生技术联盟
 ## 逆向
 http://www.52pojie.cn/ 吾爱破解   
 http://bbs.pediy.com/ 看雪论坛
+
+
+
+## 在线运行代码
+
+1. [代码在线运行](https://tool.lu/coderunner/?tdsourcetag=s_pctim_aiomsg)  
+
+2. [代码测试](http://www.dooccn.com/php/)
+
+```{.python .input}
+
+```
