@@ -207,3 +207,134 @@ if(!preg_match("/(\d+)\.(\d+)\.(\d+)\.(\d+)/",$ip)) {
 ## unset
 unset(bar);用来销毁指定的变量，如果变量bar 包含在请求参数中，可能出现销毁一些变量而实现程序逻辑绕过。
 
+
+```php
+<?php  
+$_CONFIG['extraSecure'] = true;
+
+foreach(array('_GET','_POST') as $method) {
+    foreach($$method as $key=>$value) {
+      // $key == _CONFIG
+      // $$key == $_CONFIG
+      // 这个函数会把 $_CONFIG 变量销毁
+      unset($$key);
+    }
+}
+
+if ($_CONFIG['extraSecure'] == false) {
+    echo 'flag {****}';
+}
+?>
+```
+
+## intval()
+int转string：
+
+```php
+$var = 5;  
+方式1：$item = (string)$var;  
+方式2：$item = strval($var); 
+```
+
+string转int：intval()函数。
+
+```php
+var_dump(intval('2')) //2  
+var_dump(intval('3abcd')) //3  
+var_dump(intval('abcd')) //0 
+可以使用字符串-0转换，来自于wechall的方法
+```
+
+
+说明intval()转换的时候，会将从字符串的开始进行转换直到遇到一个非数字的字符。即使出现无法转换的字符串，intval()不会报错而是返回0 
+顺便说一下，intval可以被%00截断
+
+```php
+if($req['number']!=strval(intval($req['number']))){
+     $info = "number must be equal to it's integer!! ";  
+}
+```
+
+如果当$req[‘number’]=0%00即可绕过
+    
+
+## switch()
+如果switch是数字类型的case的判断时，switch会将其中的参数转换为int类型，效果相当于intval函数。如下：
+<?php
+    $i ="abc";  
+    switch ($i) {  
+    case 0:  
+    case 1:  
+    case 2:  
+    echo "i is less than 3 but not negative";  
+    break;  
+    case 3:  
+    echo "i is 3";  
+    } 
+?>
+
+## in_array()
+
+```php
+$array=[0,1,2,'3'];  
+var_dump(in_array('abc', $array)); //true  
+var_dump(in_array('1bc', $array)); //true 
+```
+在所有php认为是int的地方输入string，都会被强制转换
+
+## serialize 和 unserialize漏洞
+这里我们先简单介绍一下php中的魔术方法（这里如果对于类、对象、方法不熟的先去学学吧），即Magic方法，php类可能会包含一些特殊的函数叫magic函数，magic函数命名是以符号__开头的，比如 __construct， __destruct，__toString，__sleep，__wakeup等等。这些函数都会在某些特殊时候被自动调用。 
+例如__construct()方法会在一个对象被创建时自动调用，对应的__destruct则会在一个对象被销毁时调用等等。 
+这里有两个比较特别的Magic方法，__sleep 方法会在一个对象被序列化的时候调用。 __wakeup方法会在一个对象被反序列化的时候调用。
+
+```php
+<?php
+class test
+{
+    public $username = '';
+    public $password = '';
+    public $file = '';
+    public function out(){
+        echo "username: ".$this->username."<br>"."password: ".$this->password ;
+    }
+     public function __toString() {
+        return file_get_contents($this->file);
+    }
+}
+$a = new test();
+$a->file = 'C:\Users\YZ\Desktop\plan.txt';
+echo serialize($a);
+?>
+//tostring方法会在输出实例的时候执行，如果实例路径是隐秘文件就可以读取了
+```
+echo unserialize触发了__tostring函数，下面就可以读取了C:\Users\YZ\Desktop\plan.txt文件了
+
+```php
+<?php
+class test
+{
+    public $username = '';
+    public $password = '';
+    public $file = '';
+    public function out(){
+        echo "username: ".$this->username."<br>"."password: ".$this->password ;
+    }
+     public function __toString() {
+        return file_get_contents($this->file);
+    }
+}
+$a = 'O:4:"test":3:{s:8:"username";s:0:"";s:8:"password";s:0:"";s:4:"file";s:28:"C:\Users\YZ\Desktop\plan.txt";}';
+echo unserialize($a);
+?>
+```
+## session 反序列化漏洞
+主要原因是 
+```
+ini_set(‘session.serialize_handler’, ‘php_serialize’); 
+ini_set(‘session.serialize_handler’, ‘php’); 
+```
+两者处理session的方式不同 
+
+```{.python .input}
+
+```
