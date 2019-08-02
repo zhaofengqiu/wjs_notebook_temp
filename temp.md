@@ -4,6 +4,7 @@
 ## MD5 compare漏洞
 PHP在处理哈希字符串时，如果利用”!=”或”==”来对哈希值进行比较，它把每一个以”0x”开头的哈希值都解释为科学计数法0的多少次方（为0），所以如果两个不同的密码经过哈希以后，其哈希值都是以”0e”开头的，那么php将会认为他们相同。 
 常见的payload有:
+
 ```php
 0x01 md5(str)
     QNKCDZO
@@ -18,9 +19,12 @@ PHP在处理哈希字符串时，如果利用”!=”或”==”来对哈希值�
     sha1('aaO8zKZF')
     sha1('aa3OFF9m')
 ```
+
+
 同时MD5不能处理数组，若有以下判断则可用数组绕过
 payload :http://127.0.0.1/1.php?a[]=1&b[]=2
 源码
+
 ```php
 if(@md5($_GET['a']) == @md5($_GET['b']))
 
@@ -30,6 +34,8 @@ if(@md5($_GET['a']) == @md5($_GET['b']))
 
 }
 ```
+
+
 现在更厉害了…自从王小云教授提出了MD5碰撞之后这个就成了大热门，现在网上流传一个诸多密码专家写的MD5碰撞程序，是根据一个文件，然后填充内容生成两个MD5值一样的文件（有一定失败率其实），然后生成的内容MD5就相同了…强网杯签到题，简直震惊…软件是fastcoll_v1.0.0.5，自行下载吧
 
 
@@ -39,6 +45,7 @@ ereg ("^[a-zA-Z0-9]+$", $_GET['password']) === FALSE
 
 ## $key是什么
 别忘记程序可以把变量本身的key也当变量提取给函数处理。
+
 ```php
 <?php
 
@@ -54,8 +61,11 @@ ereg ("^[a-zA-Z0-9]+$", $_GET['password']) === FALSE
 
 ?>
 ```
+
+
 ## 变量覆盖
 主要涉及到的函数为extract函数，看个例子
+
 ```php
 <?php  
 
@@ -82,10 +92,12 @@ ereg ("^[a-zA-Z0-9]+$", $_GET['password']) === FALSE
 ?>
 ```
 
+
 extract可以接收数组，然后重新给变量赋值，过程页很简单。 
 这里写图片描述
 
 同时！PHP的特性$可以用来赋值变量名也能导致变量覆盖！
+
 ```php
 <?php  
 
@@ -103,10 +115,13 @@ extract可以接收数组，然后重新给变量赋值，过程页很简单。
 
 ?>
 ```
+
+
 构造http://127.0.0.1:8080/test.php?a=12 即可达到目的。
 
 ## strcmp
 如果 str1 小于 str2 返回 < 0； 如果 str1 大于 str2 返回 > 0；如果两者相等，返回 0。 先将两个参数先转换成string类型。 当比较数组和字符串的时候，返回是0。 如果参数不是string类型，直接return
+
 ```php
 <?php
 
@@ -124,10 +139,13 @@ extract可以接收数组，然后重新给变量赋值，过程页很简单。
 
 ?>
 ```
+
+
 构造http://127.0.0.1:8080/test.php?password[]=
 
 ## is_numeric
 无需多言：
+
 ```php
 <?php
 
@@ -146,7 +164,7 @@ echo is_numeric('233333abc');  # 0
 
 
 ## preg_match
-如果在进行正则表达式匹配的时候，没有限制字符串的开始和结束(^ 和 $)，则可以存在绕过的问题  
+如果在进行正则表达式匹配的时候，没有限制字符串的开始和结束(^ 和 $)，则可以存在绕过的问题
 
 ```
 <?php
@@ -173,6 +191,7 @@ if(!preg_match("/(\d+)\.(\d+)\.(\d+)\.(\d+)/",$ip)) {
     print $var;
 ?>
 ```
+
 
 ## 字符串比较
 
@@ -204,9 +223,9 @@ if(!preg_match("/(\d+)\.(\d+)\.(\d+)\.(\d+)/",$ip)) {
 ?>
 ```
 
+
 ## unset
 unset(bar);用来销毁指定的变量，如果变量bar 包含在请求参数中，可能出现销毁一些变量而实现程序逻辑绕过。
-
 
 ```php
 <?php  
@@ -227,6 +246,7 @@ if ($_CONFIG['extraSecure'] == false) {
 ?>
 ```
 
+
 ## intval()
 int转string：
 
@@ -235,6 +255,7 @@ $var = 5;
 方式1：$item = (string)$var;  
 方式2：$item = strval($var); 
 ```
+
 
 string转int：intval()函数。
 
@@ -254,6 +275,7 @@ if($req['number']!=strval(intval($req['number']))){
      $info = "number must be equal to it's integer!! ";  
 }
 ```
+
 
 如果当$req[‘number’]=0%00即可绕过
     
@@ -280,6 +302,8 @@ $array=[0,1,2,'3'];
 var_dump(in_array('abc', $array)); //true  
 var_dump(in_array('1bc', $array)); //true 
 ```
+
+
 在所有php认为是int的地方输入string，都会被强制转换
 
 ## serialize 和 unserialize漏洞
@@ -307,6 +331,8 @@ echo serialize($a);
 ?>
 //tostring方法会在输出实例的时候执行，如果实例路径是隐秘文件就可以读取了
 ```
+
+
 echo unserialize触发了__tostring函数，下面就可以读取了C:\Users\YZ\Desktop\plan.txt文件了
 
 ```php
@@ -327,13 +353,32 @@ $a = 'O:4:"test":3:{s:8:"username";s:0:"";s:8:"password";s:0:"";s:4:"file";s:28:
 echo unserialize($a);
 ?>
 ```
+
+
 ## session 反序列化漏洞
-主要原因是 
+主要原因是
+
 ```
 ini_set(‘session.serialize_handler’, ‘php_serialize’); 
 ini_set(‘session.serialize_handler’, ‘php’); 
 ```
-两者处理session的方式不同 
+
+
+两者处理session的方式不同
+
+$$ \begin{align}
+
+\because\begin{cases}
+
+\acute{a}x^2+bx^2+c\gtrless0\gtrless\grave{a}x^2+bx^2+c\
+
+\acute{a}>0>\grave{a}
+
+\end{cases}\
+
+\therefore\frac{-b\pm\sqrt{b^2-4\acute{a}c}}{2\acute{a}}{}\lessgtr^\gtrlessx\lessgtr^\gtrless\frac{-b\pm\sqrt{b^2-4\grave{a}c}}{2\grave{a}}
+
+\end{align} $$
 
 ```{.python .input}
 
