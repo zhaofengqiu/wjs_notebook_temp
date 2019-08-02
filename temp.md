@@ -364,22 +364,4 @@ ini_set(‘session.serialize_handler’, ‘php’);
 ```
 
 
-两者处理session的方式不同
 
-$$ \begin{align}
-
-\because\begin{cases}
-
-\acute{a}x^2+bx^2+c\gtrless0\gtrless\grave{a}x^2+bx^2+c\
-
-\acute{a}>0>\grave{a}
-
-\end{cases}\
-
-\therefore\frac{-b\pm\sqrt{b^2-4\acute{a}c}}{2\acute{a}}{}\lessgtr^\gtrlessx\lessgtr^\gtrless\frac{-b\pm\sqrt{b^2-4\grave{a}c}}{2\grave{a}}
-
-\end{align} $$
-
-```{.python .input}
-
-```
