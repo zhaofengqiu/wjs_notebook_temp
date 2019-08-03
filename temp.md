@@ -58,4 +58,25 @@ include("secret.php");
 ```
 看到关键函数extract($_POST)
 其中extract的作用是:该函数使用数组键名作为变量名，使用数组键值作为变量值。针对数组中的每个元素，将在当前符号表中创建对应的一个变量。
+如果是http请求的话，那么就是针对表单中的每一个变量，将在当前符号表中创建对应的一个变量。
+所以构造一个表单  
 
+|名称|值|
+|--|--|
+|pass|1|
+|thepassword_123|1|
+
+构造payload：?pass=1&thepassword_123=1
+
+
+
+## 结果
+![image.png](http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/ztjdbq2ukti.png)
+
+
+## 参考资料
+1. [http://www.wujiashuai.com/2019/8/phpfumctionloudong/#_2](http://www.wujiashuai.com/2019/8/phpfumctionloudong/#_2)
+
+```{.python .input}
+
+```
