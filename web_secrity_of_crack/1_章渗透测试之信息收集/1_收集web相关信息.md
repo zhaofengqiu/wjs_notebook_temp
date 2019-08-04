@@ -19,6 +19,7 @@ whois www.baidu.com
 
 
 使用nmap
+
 ```shell
 nmap --script external baidu.com
 ```
