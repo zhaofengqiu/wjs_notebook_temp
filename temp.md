@@ -1,25 +1,33 @@
-# Gitbook Summary
+---
+title: k近邻法
+---
 
-[![npm version](https://badge.fury.io/js/gitbook-summary.svg)](https://badge.fury.io/js/gitbook-summary)
-[![Build Status](https://travis-ci.org/imfly/gitbook-summary.png?branch=master)](https://travis-ci.org/imfly/gitbook-summary)
-[![Dependencies Status](https://david-dm.org/imfly/gitbook-summary.png)](https://david-dm.org/imfly/gitbook-summary)
-[![Coverage Status](https://coveralls.io/repos/imfly/gitbook-summary/badge.png)](https://coveralls.io/r/imfly/gitbook-summary)
+### k近邻法
+
+算法描述：
+
+输入：训练数据集
+
+$$
+T=\left \{ (x_1,y_1), (x_2,y_2),\cdot \cdot \cdot (x_N,y_N)\right \}
+$$
+
+其中，$x_i\in \chi \subseteq \mathbb R^{n}$为实例的特征向量，$y_i\in {Y} =\left \{ c_1,c_2,\cdot \cdot \cdot ,c_K \right \}$为实例的类别，$i=1,2,\cdot \cdot \cdot ,N$；实例特征向量$x$；
+
+输出：实例$x$所属的类$y$。
+
+（1）根据给定的距离度量，在训练集$T$中找出与$x$最邻近的k个点，涵盖这k个点的$x$的领域记作$N_k(x)$；
+
+（2）在$N_k(x)$中根据分裂决策规则（如多数表决）决定$x$的类别$y$：
+
+$$
+y= arg\: \underset{c_j}{max} \sum _{x_i\in N_k(x)}I(y_i=c_j),i=1,2,\cdot \cdot \cdot ,K
+$$
+
+式中，$I$为指示函数，即当$y_i=c_j$时$I$为1，否则$I$为0
 
 
-A command line tool to generate a `SUMMARY.MD` from a folder。[Demo](http://imfly.github.io/how-to-create-self-publishing-platform) [中文文档](http://imfly.github.io/how-to-create-self-publishing-platform/3-%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%B9%B3%E5%8F%B0%EF%BC%9F/2-Summary%E7%9A%84%E4%BD%BF%E7%94%A8.html)
 
-## Features
-
-- Generate `SUMMARY.md` by using a CLI with some options
-- Setting with `book.json`
-- Link `README.md` to the parent directory
-- Only get '.md' files
-- Order by alphabet or numbers
-- ...
-
-## CoC (Convention over Configuration)
-
-Source directory:
 
 ```
 sources
