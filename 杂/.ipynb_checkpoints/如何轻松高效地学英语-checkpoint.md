@@ -1,6 +1,32 @@
-## 观看youtube
+![](http://i.epochtimes.com/assets/uploads/2016/03/160311101729836-600x400.jpg)
+## 听力
+### 观看youtube
 推荐youtuber：
 
-1. [SciShow]()
-2. [CrashCourse]()
-3.[vlogbrothers]()
+1. [SciShow](https://www.youtube.com/user/scishow)
+2. [CrashCourse](https://www.youtube.com/user/crashcourse)
+3.[vlogbrothers](https://www.youtube.com/user/vlogbrothers)
+4. [casey neistat](https://www.youtube.com/user/caseyneistat)
+
+## 阅读
+阅读自己比较感兴趣的阅读材料，不是很看的懂也可以（70%能看懂就ok了）不用查生词，为了看整个故事，以整体为中心。
+选择太难的书的缺点：
+1. 无法了解故事大概
+2. 不认识的单词无法通过前后文了解词义；
+
+选择技术文档的优点
+1. 语法简单
+2. 活学活用
+毕竟兴趣是最好的老师，
+
+## 写作
+
+尝试从csdn转到外国的技术博客网站
+
+## 口语
+
+~~参加相关的社团~~ 社团什么状态你又不是不知道
+
+```{.python .input}
+
+```
