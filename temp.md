@@ -1,6 +1,5 @@
-```
-npm install -g gitbook-summary
-```
+#### test
+
 
 
 ## Using
@@ -133,3 +132,21 @@ We love pull requests! You can `fork it` and commit a `pr`
 ## License
 
 The MIT License
+
+```{.python .input  n=2}
+print("wujiashuai")
+```
+
+```{.json .output n=2}
+[
+ {
+  "name": "stdout",
+  "output_type": "stream",
+  "text": "wujiashuai\n"
+ }
+]
+```
+
+```{.python .input}
+
+```

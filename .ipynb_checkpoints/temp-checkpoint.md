@@ -1,8 +1,5 @@
-## Install
+#### test
 
-```
-npm install -g gitbook-summary
-```
 
 
 ## Using
