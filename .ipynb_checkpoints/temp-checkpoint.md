@@ -132,3 +132,22 @@ We love pull requests! You can `fork it` and commit a `pr`
 ## License
 
 The MIT License
+
+```{.python .input  n=3}
+print("wujiashuai")
+```
+
+```{.json .output n=3}
+[
+ {
+  "name": "stdout",
+  "output_type": "stream",
+  "text": "wujiashuai\nwujiashuai\nwujiashuai\nwujiashuai\nwujiashuai\nwujiashuai\nwujiashuai\nwujiashuai\nwujiashuai\nwujiashuai\n"
+ }
+]
+```
+
+```{.python .input}
+for i in range(10):
+    print()
+```
