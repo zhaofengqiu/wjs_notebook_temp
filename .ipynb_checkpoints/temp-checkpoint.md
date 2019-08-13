@@ -1,82 +1,137 @@
-## 题目
-题目来源[http://chinalover.sinaapp.com/web18/index.php](http://chinalover.sinaapp.com/web18/index.php)
-
-### 查看网址
-
-<img src="http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/b2yddz6s96q.png" width="600px" />
-
-#### 查看source at /source.php
-出现源码：
-```php
-<?php
-include("secret.php");
-?>
-<html>
-    <head>
-        <title>The Ducks</title>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <div class="container">
-            <div class="jumbotron">
-                <center>
-                    <h1>The Ducks</h1>
-                    <?php if ($_SERVER["REQUEST_METHOD"] == "POST") { ?>
-                        <?php
-                        extract($_POST);
-                        if ($pass == $thepassword_123) { ?>
-                            <div class="alert alert-success">
-                                <code><?php echo $theflag; ?></code>
-                            </div>
-                        <?php } ?>
-                    <?php } ?>
-                    <form action="." method="POST">
-                        <div class="row">
-                            <div class="col-md-6 col-md-offset-3">
-                                <div class="row">
-                                    <div class="col-md-9">
-                                        <input type="password" class="form-control" name="pass" placeholder="Password" />
-                                    </div>
-                                    <div class="col-md-3">
-                                        <input type="submit" class="btn btn-primary" value="Submit" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </center>
-            </div>
-            <p>
-                <center>
-                    source at <a href="source.php" target="_blank">/source.php</a>
-                </center>
-            </p>
-        </div>
-    </body>
-</html>
-```
-看到关键函数extract($_POST)
-其中extract的作用是:该函数使用数组键名作为变量名，使用数组键值作为变量值。针对数组中的每个元素，将在当前符号表中创建对应的一个变量。
-如果是http请求的话，那么就是针对表单中的每一个变量，将在当前符号表中创建对应的一个变量。
-所以构造一个表单  
-
-|名称|值|
-|--|--|
-|pass|1|
-|thepassword_123|1|
-
-构造payload：?pass=1&thepassword_123=1
-
-
-
-## 结果
-![image.png](http://wujiashuaitupiancunchu.oss-cn-shanghai.aliyuncs.com/jupyter_notebook_img/ztjdbq2ukti.png)
-
-
-## 参考资料
-1. [http://www.wujiashuai.com/2019/8/phpfumctionloudong/#_2](http://www.wujiashuai.com/2019/8/phpfumctionloudong/#_2)
-
-```{.python .input}
+## Install
 
 ```
+npm install -g gitbook-summary
+```
+
+
+## Using
+
+1> Generate a `SUMMARY.md` Simply
+
+```
+$ cd /path/to/your/book/
+$ book sm
+```
+
+
+or, For example:
+
+```
+$ book sm -r ../sailsjs-docs-gitbook/en -i 0home -u 'myApp' -c 'concepts, reference, userguides' -n "Sails.js 官方文档(中英合辑）"
+```
+
+
+To see the command line options:
+
+```
+$ book sm --help
+
+  Usage: summary|sm [options]
+
+  Generate a `SUMMARY.md` from a folder
+
+  Options:
+
+    -h, --help                    output usage information
+    -r, --root [string]           root folder, default is `.`
+    -t, --title [string]          book title, default is `Your Book Title`.
+    -c, --catalog [list]          catalog folders included book files, default is `all`.
+    -i, --ignores [list]          ignore folders that be excluded, default is `[]`.
+    -u, --unchanged [list]        unchanged catalog like `request.js`, default is `[]`.
+    -o, --outputfile [string]     output file, defaut is `./SUMMARY.md`
+    -s, --sortedBy [string]       sorted by sortedBy, for example: `num-`, defaut is sorted by characters
+    -d, --disableTitleFormatting  don't convert filename/folder name to start case (for example: `JavaScript` to `Java Script`), default is `false`
+
+```
+
+
+**Notes**： 
+* The article title is taken from `title` property in the articles front-matter. If this property is not available, the articles filename will be used as title for the summary. 
+* The option `-s` or `--sortedBy` can not be given `-` as argument, because commander.js will parse it an option. But you can set it in `book.json` as follows.  
+* set up the sortedBy and if there are any summaries missing the order, look at the example below and follow,  
+for example, you have summaries like this `01-elementry-school, 02-middle-school, 03-university, ...`  
+you realized high school was missing, then You can make correct order in the following way  
+eg. `01-elementry-school, 02-middle-school, 02a-high-school, 03-university, ...`  
+not `01-elementry-school, 02-middle-school, 03-high-school, 04-university, ...`
+
+2> Create a `book.json` in the book`s root folder
+
+for example:
+
+```
+// test/books/config-json/book.json
+{
+    "title": "json-config-name",
+    "outputfile": "test.md",
+    "catalog": "all",  // or [chapter1，chapter2, ...]
+    "ignores": [],  //Default: '.*', '_book'...
+    "unchanged": [], // for example: ['myApp'] -> `myApp` not `My App`
+    "sortedBy": "-",
+    "disableTitleFormatting": true // default: false
+}
+```
+
+
+then, you can do:
+
+```
+$ book sm
+```
+
+
+You will get a `test.md` file:
+
+![test.md.jpg](doc/img/test.md.jpg)
+
+3> Get a markdown artical from a html file or a remote url
+
+```
+$ book md -l "http://book.btcnodejs.com/index.html" -s "div.className"
+```
+
+
+You will get the 'index.html' and 'index.md'.
+
+4> Get convert between zh and zh-tw, zh-hk, or zh-sg
+
+```
+$ book cv -f ./test/language/test.md -l zh-tw -t "./test/language/test2.md"
+```
+
+
+## eBooks
+
+* 《Nodejs开发加密货币》： https://github.com/imfly/bitcoin-on-nodejs
+* 《用Gitbook和Github轻松搭建自出版平台》： https://github.com/imfly/how-to-create-self-publishing-platform
+* 《sails.js 官方文档 多语言电子书》：https://github.com/imfly/sailsjs-docs-gitbook
+
+More Gitbooks : https://www.gitbook.com/@imfly
+
+## Development
+
+```
+npm install
+npm link
+```
+
+
+## Test
+
+```
+npm test
+```
+
+
+## Todo
+
+- Convert articals between Simplified and Traditional Chinese.
+- Generate eBooks(html, pdf, etc) by extending `gitbook`;
+
+## Contribute
+
+We love pull requests! You can `fork it` and commit a `pr`
+
+## License
+
+The MIT License

@@ -1,18 +1,3 @@
-```
-sources
-├── 1-FirstChapter   // The first chapter，format: {orderNumber or alphabet}-{chapterName}.md
-├────── 1-FirstDocument.md
-├────── 5-SecondDocument.md  // concentrating solely on the order, not the numbers.
-├── 3-SecondChapter                     // Focus only on the order, not the numbers.
-├────── 1-FirstDocumentOfSecondChapter.md
-├────── 2-SecondDocumentOfSecondChapter.md  
-├── 7-ThirdChapter
-├── FourthChapter  // May have no order
-├── README.md // In addition to readme.md, not to put other markdown documents
-└── book.json     // Set up the book
-```
-
-
 ## Install
 
 ```
