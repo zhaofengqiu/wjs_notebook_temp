@@ -1,5 +1,3 @@
-## Install
-
 ```
 npm install -g gitbook-summary
 ```
